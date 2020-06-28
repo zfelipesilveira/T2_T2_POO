@@ -23,17 +23,14 @@ public class FilaPedidos {
 //        return retorno;
 //    }
 
-    public boolean insere(Pedido novoPedido) {
-        boolean retorno = pedidos.add(novoPedido);
+    public void insere(Pedido novoPedido) {
+        pedidos.add(novoPedido);
         total = total +1;
-        if(retorno) return true;
-        else return false;
 
     }
 
-    public Pedido remove(Pedido umPedido) {
-        Pedido pedidoRetornado = pedidos.remove();
-        return pedidoRetornado;
+    public void remove() {
+        pedidos.remove();
     }
 
     public Queue<Pedido> getPedidos() {

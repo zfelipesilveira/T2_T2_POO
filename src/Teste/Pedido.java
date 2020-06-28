@@ -37,10 +37,10 @@ public class Pedido {
 
     public String toString(){
         return "Código do pedido: " + codPedido + "\n" +
-                "CPF/CNPJ do cliente " + cpfcnpj + "\n" +
-                "Categoria do automóvel" + categoria.getNome() + "\n" +
-                "Data de início" + dataInicio + "\n" +
-                "Data do fim" + dataFim +"\n";
+                "CPF/CNPJ do cliente: " + cpfcnpj + "\n" +
+                "Categoria do automóvel: " + categoria.getNome() + "\n" +
+                "Data de início: " + dataInicio + "\n" +
+                "Data do fim: " + dataFim +"\n";
 
     }
 }
