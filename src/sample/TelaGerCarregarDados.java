@@ -59,6 +59,34 @@ public class TelaGerCarregarDados extends Application {
 
     }
 
+    public ListaAutomoveis getListaAuto() {
+        return listaAuto;
+    }
+
+    public ListaCategoria getListaCat() {
+        return listaCat;
+    }
+
+    public ListaModelo getListaModelo() {
+        return listaModelo;
+    }
+
+    public ListaLocacoes getListaLoca() {
+        return listaLoca;
+    }
+
+    public ListaClientes getListaCli() {
+        return listaCli;
+    }
+
+    public FilaPedidos getFilaPedidos() {
+        return filaPedidos;
+    }
+
+    public ListaMarcas getListaMar() {
+        return listaMar;
+    }
+
     @Override
     public void start(Stage primaryStage) {
         // Acesso ao stage (palco) da aplicacao
@@ -120,6 +148,8 @@ public class TelaGerCarregarDados extends Application {
 
 
         });
+
+
 
 //        btnCadastrar.setOnAction(e -> {
 //            try {

@@ -20,11 +20,13 @@ public class MenuGerente extends Application {
 
     private Application raiz;
     private TelaGerCarregarDados telaGerCarregarDados;
+    private TelaGerCadastraCategoria telaGerCadastraCategoria;
 
     public MenuGerente(Application raiz) {
         super();
         this.raiz = raiz;
         telaGerCarregarDados = new TelaGerCarregarDados(this);
+        telaGerCadastraCategoria = new TelaGerCadastraCategoria(this);
 
     }
 
@@ -89,6 +91,14 @@ public class MenuGerente extends Application {
         btnCarregarDados.setOnAction(e -> {
             try {
                 telaGerCarregarDados.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        btnCadCat.setOnAction(e -> {
+            try {
+                telaGerCadastraCategoria.start(thestage);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
