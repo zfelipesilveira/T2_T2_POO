@@ -19,12 +19,12 @@ import javafx.stage.Stage;
 public class MenuGerente extends Application {
 
     private Application raiz;
-    private TelaFuncCadastraCliente telaFCC;
+    private TelaGerCarregarDados telaGerCarregarDados;
 
     public MenuGerente(Application raiz) {
         super();
         this.raiz = raiz;
-        //telaFCC = new TelaFuncCadastraCliente(this);
+        telaGerCarregarDados = new TelaGerCarregarDados(this);
 
     }
 
@@ -59,7 +59,7 @@ public class MenuGerente extends Application {
         Button btnConsultarClientes = new Button("Consultar clientes");
         Button btnConsultarAuto = new Button("Consultar automóveis");
 
-        Button btnMenuPrincipal = new Button("Voltar para o menu principal");
+        Button btnVoltar = new Button("Voltar para o menu principal");
 
 
         painel2.add(btnCarregarDados, 0, 3, 2, 1);
@@ -71,12 +71,14 @@ public class MenuGerente extends Application {
         painel2.add(btnConsultarLocacoes, 0, 9);
         painel2.add(btnConsultarClientes, 0, 10);
         painel2.add(btnConsultarAuto, 0, 11);
+        painel2.add(btnVoltar,0,12);
+
 
 
 
 
         // Tratamento de evento dos botoes
-        btnMenuPrincipal.setOnAction(e -> {
+        btnVoltar.setOnAction(e -> {
             try {
                 raiz.start(thestage);
             } catch (Exception ex) {
@@ -86,7 +88,7 @@ public class MenuGerente extends Application {
 
         btnCarregarDados.setOnAction(e -> {
             try {
-                telaFCC.start(thestage);
+                telaGerCarregarDados.start(thestage);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -103,7 +105,7 @@ public class MenuGerente extends Application {
 //        });
         Scene scene2 = new Scene(painel2, 500, 400);
 
-        primaryStage.setTitle("Menu de Funcionários");
+        primaryStage.setTitle("Menu de Gerente");
         primaryStage.setScene(scene2);
         primaryStage.show();
     }
