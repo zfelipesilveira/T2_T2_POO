@@ -26,9 +26,9 @@ DDD-4D44;4;2019;10.00;T
 88.630.413/0002-81;ACME;J
 336.212.777-06;Maria de Souza;F
 61.797.924/0007-40;HP;J
-// Pedido de locação: código do pedido ; CPF ou CNPJ ; código da categoria desejada ; data de início ; data de fim
+// Pedido de locação: código do pedido ; CPF ou CNPJ ; nome da categoria desejada ; data de início ; data de fim
 [PEDIDO]
-1;355.014.791-09;1;10/10/2020;14/10/2020
-2;88.630.413/0002-81;1;05/09/2020;14/09/2020
-3;61.797.924/0007-40;1;01/10/2020;09/10/2020
-4;336.212.777-06;2;01/10/2020;09/10/2020
+1;355.014.791-09;Sedan;10/10/2020;14/10/2020
+2;88.630.413/0002-81;SUV Medio;05/09/2020;14/09/2020
+3;61.797.924/0007-40;Sedan;01/10/2020;09/10/2020
+4;336.212.777-06;SUV Medio;01/10/2020;09/10/2020
