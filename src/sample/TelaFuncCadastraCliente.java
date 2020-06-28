@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -95,6 +96,21 @@ public class TelaFuncCadastraCliente extends Application {
         painel3.add(hbBtn,1,6);
         painel3.add(btnMenuPrincipal, 0, 8);
 
+        final Text actiontarget = new Text();
+        painel3.add(actiontarget, 1, 10);
+        actiontarget.setId("actiontarget");
+
+        // Tratamento de evento do botao
+        btnCadastrar.setOnAction(e -> {
+            //System.out.println("Botao pressionado! User name: "+ userTextField.getText() + ", Password: " + pwBox.getText());
+            Cliente cpf = new PessoaFisica(nomeTextField.getText(),telBox.getText(), cpfTextField.getText());
+            //if (rbFisica.equals(true))
+            lista.insere(cpf);
+            lista.mostra();
+            actiontarget.setFill(Color.GREEN);
+            actiontarget.setText("Cliente cadastrado");
+        });
+
 
 
         // Tratamento de evento dos botoes
@@ -106,12 +122,12 @@ public class TelaFuncCadastraCliente extends Application {
             }
         });
 
-        btnCadastrar.setOnAction(e -> {
-            Cliente cpf = new PessoaFisica(nomeTextField.getText(),telBox.getText(), cpfTextField.getText());
-            //if (rbFisica.equals(true))
-                lista.insere(cpf);
-            lista.mostra();
-        });
+//        btnCadastrar.setOnAction(e -> {
+//            Cliente cpf = new PessoaFisica(nomeTextField.getText(),telBox.getText(), cpfTextField.getText());
+//            //if (rbFisica.equals(true))
+//                lista.insere(cpf);
+//            lista.mostra();
+//        });
 
 //        btnCadastrar.setOnAction(e -> {
 //            try {

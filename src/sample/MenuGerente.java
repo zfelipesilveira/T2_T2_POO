@@ -103,7 +103,7 @@ public class MenuGerente extends Application {
 //        btnFinal.setOnAction(e -> {
 //            thestage.close();
 //        });
-        Scene scene2 = new Scene(painel2, 500, 400);
+        Scene scene2 = new Scene(painel2, 600, 500);
 
         primaryStage.setTitle("Menu de Gerente");
         primaryStage.setScene(scene2);
