@@ -174,13 +174,13 @@ public class LeituraArquivoTextoTeste {
         }
     }
 
-    public static void main(String args[]) {
-        LeituraArquivoTextoTeste exemplo = new LeituraArquivoTextoTeste();
-//        exemplo.leLinhasTexto();
-//        System.out.println("------");
-//        exemplo.leRegistrosTexto();
-//        System.out.println("------");
-        //exemplo.leRegistrosTexto2();
-    }
+//    public static void main(String args[]) {
+//        LeituraArquivoTextoTeste exemplo = new LeituraArquivoTextoTeste();
+////        exemplo.leLinhasTexto();
+////        System.out.println("------");
+////        exemplo.leRegistrosTexto();
+////        System.out.println("------");
+//        //exemplo.leRegistrosTexto2();
+//    }
 
 }
