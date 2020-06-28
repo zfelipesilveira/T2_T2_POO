@@ -36,6 +36,10 @@ public class FilaPedidos {
         return pedidoRetornado;
     }
 
+    public Queue<Pedido> getPedidos() {
+        return pedidos;
+    }
+
     public void mostraTotal(){
         System.out.print(total);
     }
