@@ -1,9 +1,7 @@
 package sample;
 
 
-import Teste.Cliente;
-import Teste.ListaClientes;
-import Teste.PessoaFisica;
+import Teste.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -27,6 +25,16 @@ public class TelaGerCarregarDados extends Application {
     private ListaClientes lista = new ListaClientes(100);
     private ToggleGroup rbFisicaJuridica;
     private RadioButton rbFisica, rbJuridica;
+
+    private ListaAutomoveis listaAuto = new ListaAutomoveis(100);
+    private ListaCategoria listaCat = new ListaCategoria(100);
+    private ListaClientes listaCli = new ListaClientes(100);
+    private ListaMarcas listaMar = new ListaMarcas(100);
+    private ListaModelo listaModelo = new ListaModelo(100);
+    private FilaPedidos filaPedidos = new FilaPedidos();
+    private ListaLocacoes listaLoca = new ListaLocacoes(100);
+
+
 
 
     public TelaGerCarregarDados(MenuGerente menuGer) {
@@ -86,7 +94,8 @@ public class TelaGerCarregarDados extends Application {
         });
 
         btnCarregarDados.setOnAction(e -> {
-            MenuPrincipal.
+
+
 
         });
 
