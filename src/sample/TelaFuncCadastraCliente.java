@@ -4,6 +4,7 @@ package sample;
 import Teste.Cliente;
 import Teste.ListaClientes;
 import Teste.PessoaFisica;
+import TratamentoArquivos.EscritaArquivos;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -26,6 +27,7 @@ public class TelaFuncCadastraCliente extends Application {
     private MenuFunc menuFunc;
     private Cliente cliente;
     private ListaClientes lista = new ListaClientes(100);
+    EscritaArquivos escritaArquivos = new EscritaArquivos();
     private ToggleGroup rbFisicaJuridica;
     private RadioButton rbFisica, rbJuridica;
 
@@ -77,6 +79,7 @@ public class TelaFuncCadastraCliente extends Application {
 
         Button btnCadastrar = new Button("Cadastrar Cliente");
         Button btnMenuPrincipal = new Button("Voltar");
+        Button btnSalvarClientes = new Button("Salvar clientes");
 
         rbFisicaJuridica = new ToggleGroup();
         rbFisica = new RadioButton("Pessoa Física");
@@ -96,6 +99,14 @@ public class TelaFuncCadastraCliente extends Application {
         painel3.add(hbBtn,1,6);
         painel3.add(btnMenuPrincipal, 0, 8);
 
+        painel3.add(btnSalvarClientes,1,7);
+        HBox hbBtn2 = new HBox(11);
+        hbBtn2.setAlignment(Pos.BOTTOM_RIGHT);
+        hbBtn2.getChildren().add(btnSalvarClientes);
+        painel3.add(hbBtn2,1,7);
+
+
+
         final Text actiontarget = new Text();
         painel3.add(actiontarget, 1, 10);
         actiontarget.setId("actiontarget");
@@ -109,6 +120,14 @@ public class TelaFuncCadastraCliente extends Application {
             lista.mostra();
             actiontarget.setFill(Color.GREEN);
             actiontarget.setText("Cliente cadastrado");
+        });
+
+        btnSalvarClientes.setOnAction(e -> {
+            Cliente[] listaSalvar = new Cliente[100];
+            listaSalvar = lista.getClientes().toArray(listaSalvar);
+            escritaArquivos.gravaRegistrosTexto(listaSalvar);
+            actiontarget.setFill(Color.GREEN);
+            actiontarget.setText("Clientes salvos em txt");
         });
 
 

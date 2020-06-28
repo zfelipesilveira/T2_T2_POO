@@ -86,7 +86,7 @@ public class TelaGerCarregarDados extends Application {
         });
 
         btnCarregarDados.setOnAction(e -> {
-
+            MenuPrincipal.
 
         });
 

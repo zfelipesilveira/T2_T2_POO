@@ -1,6 +1,6 @@
 package sample;
 
-import Teste.Cliente;
+import Teste.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -18,17 +18,28 @@ import javafx.stage.Stage;
 
 public class MenuPrincipal extends Application {
 
-    private Usuario usuario;
+
     private MenuFunc menuFunc;
     private MenuGerente menuGerente;
     private Cliente cliente;
+    private ListaAutomoveis listaAuto = new ListaAutomoveis(100);
+    private ListaCategoria listaCat = new ListaCategoria(100);
+    private ListaClientes listaCli = new ListaClientes(100);
+    private ListaMarcas listaMar = new ListaMarcas(100);
+    private ListaModelo listaModelo = new ListaModelo(100);
+    private FilaPedidos filaPedidos = new FilaPedidos();
+    private ListaLocacoes listaLoca = new ListaLocacoes(100);
+
 
     public MenuPrincipal() {
         super();
-        usuario = new Usuario();
         menuFunc = new MenuFunc(this);
         menuGerente = new MenuGerente(this);
 
+    }
+
+    public ListaAutomoveis getListaAuto() {
+        return listaAuto;
     }
 
     @Override

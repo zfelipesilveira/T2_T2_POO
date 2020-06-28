@@ -41,6 +41,10 @@ public class ListaClientes {
         return false;
     }
 
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+
     public void mostraTotal(){
         System.out.print(total);
     }
