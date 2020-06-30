@@ -20,6 +20,10 @@ public class MenuFunc extends Application {
 
     private Application raiz;
     private TelaFuncCadastraCliente telaFCC;
+    //private TelaFunConsultaDispAuto
+    //private TelaFuncConsultaValorLocacao
+    //private TelaFuncRealizaLocacao
+    //private TelaFuncFinalizaLocacao
 
     public MenuFunc(Application raiz) {
         super();
