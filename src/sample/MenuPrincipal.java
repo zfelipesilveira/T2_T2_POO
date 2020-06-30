@@ -26,9 +26,9 @@ public class MenuPrincipal extends Application {
     private ListaCategoria listaCat = new ListaCategoria(100);
     private ListaClientes listaCli = new ListaClientes(100);
     private ListaMarcas listaMar = new ListaMarcas(100);
-    private ListaModelo listaModelo = new ListaModelo(100);
-    private FilaPedidos filaPedidos = new FilaPedidos();
-    private ListaLocacoes listaLoca = new ListaLocacoes(100);
+    private ListaModelo listaMod = new ListaModelo(100);
+    private FilaPedidos filaPed = new FilaPedidos();
+    private ListaLocacoes listaLoc = new ListaLocacoes(100);
 
 
     public MenuPrincipal() {
@@ -47,11 +47,11 @@ public class MenuPrincipal extends Application {
     }
 
     public ListaModelo getListaModelo() {
-        return listaModelo;
+        return listaMod;
     }
 
     public ListaLocacoes getListaLoca() {
-        return listaLoca;
+        return listaLoc;
     }
 
     public ListaClientes getListaCli() {
@@ -59,7 +59,7 @@ public class MenuPrincipal extends Application {
     }
 
     public FilaPedidos getFilaPedidos() {
-        return filaPedidos;
+        return filaPed;
     }
 
     public ListaMarcas getListaMar() {

@@ -18,9 +18,15 @@ import javafx.stage.Stage;
 
 public class MenuGerente extends Application {
 
+
+    // telas necessárias
     private Application raiz;
     private TelaGerCarregarDados telaGerCarregarDados;
     private TelaGerCadastraCategoria telaGerCadastraCategoria;
+
+    //coleções necessárias
+
+
 
     public MenuGerente(Application raiz) {
         super();

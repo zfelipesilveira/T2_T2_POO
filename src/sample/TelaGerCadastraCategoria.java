@@ -98,7 +98,7 @@ public class TelaGerCadastraCategoria extends Application {
             CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
 
             actiontarget.setFill(Color.GREEN);
-            actiontarget.setText("Dados carregados!");
+            actiontarget.setText("Categoria cadastrada carregados!");
 
 
         });
