@@ -23,6 +23,13 @@ public class MenuGerente extends Application {
     private Application raiz;
     private TelaGerCarregarDados telaGerCarregarDados;
     private TelaGerCadastraCategoria telaGerCadastraCategoria;
+    // private TelaGerCadastraMarca telaGerCadastraMarca;
+    // private TelaGerCadastraModelo telaGerCadastraModelo;
+    // private TelaGerCadastraAutomovel telaGerCadastraAutomovel;
+    // private TelaGerRemoveAutomovel telaGerRemoveAutomovel
+    // private TelaGerConsultaLocacoes telaGerConsultaLocacoes
+    // private TelaGerConsultaClientes telaGerConsultaClientes
+    // private TelaGerConsultaAutomoveis telaGerConsultaAutomoveis
 
     //coleções necessárias
 
