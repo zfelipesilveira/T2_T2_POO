@@ -61,5 +61,18 @@ public class ListaClientes {
         }
     }
 
+    public String toString(){
+        if (total < 1) System.out.println("Não há clientes cadastrados");
+        if (total > 0) {
+            String str = " ";
+            str = "Lista de clientes:" + "\n";
+            for (int i = 0; i < clientes.size(); i++) {
+                str = str + clientes.get(i).toString() + "\n";
+            }
+            return str;
+        }
+        else return "Não há clientes cadastrados";
+    }
+
 
 }
