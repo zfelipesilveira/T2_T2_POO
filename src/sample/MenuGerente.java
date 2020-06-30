@@ -118,6 +118,14 @@ public class MenuGerente extends Application {
             }
         });
 
+        btnCadMar.setOnAction(e -> {
+            try {
+                telaGerCadastraMarca.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
 //        btnCadCli.setOnAction(e -> {
 //            try {
 //
