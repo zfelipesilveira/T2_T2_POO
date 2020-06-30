@@ -7,11 +7,11 @@ import java.util.Date;
 public class Locacao {
     private Cliente cliente;
     private Automovel automovel;
-    private int periodo;
+    private double periodo;
     private double valor;
 
 
-    public Locacao(Cliente cliente, Automovel automovel, int periodo){
+    public Locacao(Cliente cliente, Automovel automovel, double periodo){
         this.cliente = cliente;
         this.automovel = automovel;
         this.periodo = periodo;

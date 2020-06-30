@@ -23,7 +23,7 @@ public class MenuGerente extends Application {
     private Application raiz;
     private TelaGerCarregarDados telaGerCarregarDados;
     private TelaGerCadastraCategoria telaGerCadastraCategoria;
-    // private TelaGerCadastraMarca telaGerCadastraMarca;
+    private TelaGerCadastraMarca telaGerCadastraMarca;
     // private TelaGerCadastraModelo telaGerCadastraModelo;
     // private TelaGerCadastraAutomovel telaGerCadastraAutomovel;
     // private TelaGerRemoveAutomovel telaGerRemoveAutomovel
@@ -40,6 +40,7 @@ public class MenuGerente extends Application {
         this.raiz = raiz;
         telaGerCarregarDados = new TelaGerCarregarDados(this);
         telaGerCadastraCategoria = new TelaGerCadastraCategoria(this);
+        telaGerCadastraMarca = new TelaGerCadastraMarca(this);
 
     }
 
