@@ -27,8 +27,8 @@ public class MenuPrincipal extends Application {
     private ListaClientes listaCli;
     private ListaMarcas listaMar;
     private ListaModelo listaMod;
-    private PilhaPedidos pilhaPed;
     private ListaLocacoes listaLoc;
+    private PilhaPedidos pilhaPed;
 
 
     public MenuPrincipal() {
@@ -40,9 +40,8 @@ public class MenuPrincipal extends Application {
         listaCli = new ListaClientes(100);
         listaMar = new ListaMarcas(100);
         listaMod = new ListaModelo(100);
-        pilhaPed = new PilhaPedidos();
         listaLoc = new ListaLocacoes(100);
-
+        pilhaPed = new PilhaPedidos();
 
     }
 

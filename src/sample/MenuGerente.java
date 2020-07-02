@@ -1,6 +1,6 @@
 package sample;
 
-import Teste.Cliente;
+import Teste.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -32,15 +32,33 @@ public class MenuGerente extends Application {
     // private TelaGerConsultaAutomoveis telaGerConsultaAutomoveis
 
     //coleções necessárias
+    private ListaAutomoveis listaAuto;
+    private ListaCategoria listaCat;
+    private ListaClientes listaCli;
+    private ListaMarcas listaMar;
+    private ListaModelo listaMod;
+    private ListaLocacoes listaLoc;
+    private PilhaPedidos pilhaPed;
 
 
-
-    public MenuGerente(Application raiz) {
+    public MenuGerente(Application raiz, ListaAutomoveis la, ListaCategoria lcat, ListaClientes lcli,
+                       ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp) {
         super();
         this.raiz = raiz;
         telaGerCarregarDados = new TelaGerCarregarDados(this);
         telaGerCadastraCategoria = new TelaGerCadastraCategoria(this);
         telaGerCadastraMarca = new TelaGerCadastraMarca(this);
+
+        //
+        this.listaAuto = la;
+        this.listaCat = lcat;
+        this.listaCli = lcli;
+        this.listaMar = lmar;
+        this.listaMod = lmod;
+        this.listaLoc = ll;
+        this.pilhaPed = pp;
+
+
 
     }
 
