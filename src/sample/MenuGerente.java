@@ -45,9 +45,7 @@ public class MenuGerente extends Application {
                        ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp) {
         super();
         this.raiz = raiz;
-        telaGerCarregarDados = new TelaGerCarregarDados(this);
-        telaGerCadastraCategoria = new TelaGerCadastraCategoria(this);
-        telaGerCadastraMarca = new TelaGerCadastraMarca(this);
+
 
         //
         this.listaAuto = la;
@@ -58,6 +56,10 @@ public class MenuGerente extends Application {
         this.listaLoc = ll;
         this.pilhaPed = pp;
 
+
+        telaGerCarregarDados = new TelaGerCarregarDados(this,la,lcat,lcli,lmar,lmod, ll, pp);
+        telaGerCadastraCategoria = new TelaGerCadastraCategoria(this);
+        telaGerCadastraMarca = new TelaGerCadastraMarca(this);
 
 
     }

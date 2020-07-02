@@ -1,6 +1,6 @@
 package sample;
 
-import Teste.Cliente;
+import Teste.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -25,10 +25,32 @@ public class MenuFunc extends Application {
     //private TelaFuncRealizaLocacao
     //private TelaFuncFinalizaLocacao
 
-    public MenuFunc(Application raiz) {
+    //coleções necessárias
+    private ListaAutomoveis listaAuto;
+    private ListaCategoria listaCat;
+    private ListaClientes listaCli;
+    private ListaMarcas listaMar;
+    private ListaModelo listaMod;
+    private ListaLocacoes listaLoc;
+    private PilhaPedidos pilhaPed;
+
+    public MenuFunc(Application raiz, ListaAutomoveis la, ListaCategoria lcat, ListaClientes lcli,
+                    ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp) {
         super();
         this.raiz = raiz;
-        telaFCC = new TelaFuncCadastraCliente(this);
+
+
+
+        this.listaAuto = la;
+        this.listaCat = lcat;
+        this.listaCli = lcli;
+        this.listaMar = lmar;
+        this.listaMod = lmod;
+        this.listaLoc = ll;
+        this.pilhaPed = pp;
+
+
+        telaFCC = new TelaFuncCadastraCliente(this, listaCli);
 
     }
 

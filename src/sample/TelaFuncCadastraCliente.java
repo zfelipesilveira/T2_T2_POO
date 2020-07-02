@@ -27,14 +27,16 @@ public class TelaFuncCadastraCliente extends Application {
     private MenuFunc menuFunc;
     private Cliente cliente;
     private ListaClientes lista = new ListaClientes(100);
+    private ListaClientes listaCli;
     EscritaArquivos escritaArquivos = new EscritaArquivos();
     private ToggleGroup rbFisicaJuridica;
     private RadioButton rbFisica, rbJuridica;
 
 
-    public TelaFuncCadastraCliente(MenuFunc menuFunc) {
+    public TelaFuncCadastraCliente(MenuFunc menuFunc, ListaClientes lcli) {
         super();
         this.menuFunc = menuFunc;
+        this.listaCli = lcli;
 
     }
 
@@ -116,15 +118,15 @@ public class TelaFuncCadastraCliente extends Application {
             //System.out.println("Botao pressionado! User name: "+ userTextField.getText() + ", Password: " + pwBox.getText());
             Cliente cpf = new PessoaFisica(nomeTextField.getText(),telBox.getText(), cpfTextField.getText());
             //if (rbFisica.equals(true))
-            lista.insere(cpf);
-            lista.mostra();
+            listaCli.insere(cpf);
+            listaCli.mostra();
             actiontarget.setFill(Color.GREEN);
             actiontarget.setText("Cliente cadastrado");
         });
 
         btnSalvarClientes.setOnAction(e -> {
             Cliente[] listaSalvar = new Cliente[100];
-            listaSalvar = lista.getClientes().toArray(listaSalvar);
+            listaSalvar = listaCli.getClientes().toArray(listaSalvar);
             escritaArquivos.gravaRegistrosTexto(listaSalvar);
             actiontarget.setFill(Color.GREEN);
             actiontarget.setText("Clientes salvos em txt");

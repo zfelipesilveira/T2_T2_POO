@@ -14,7 +14,8 @@ import java.nio.file.Paths;
 public class EscritaArquivos {
 
     //private Pessoa lista[];
-    private Cliente lista[];
+    private Cliente listaCli[];
+
 
     public void gravaLinhasTexto() {
         Path path1 = Paths.get("teste1.txt");
@@ -47,6 +48,8 @@ public class EscritaArquivos {
             System.err.format("Erro de E/S: %s%n", e);
         }
     }
+
+
 
     public static void main(String args[]) {
         EscritaArquivos exemplo = new EscritaArquivos();

@@ -35,8 +35,8 @@ public class TelaGerCarregarDados extends Application {
     private ListaCategoria listaCat;
     private ListaClientes listaCli;
     private ListaMarcas listaMar;
-    private ListaModelo listaModelo;
-    private FilaPedidos filaPedidos;
+    private ListaModelo listaMod;
+    private PilhaPedidos pilhaPed;
     private ListaLocacoes listaLoca;
 
     private LeituraArquivoTextoTeste leArquivo;
@@ -44,16 +44,17 @@ public class TelaGerCarregarDados extends Application {
 
 
 
-    public TelaGerCarregarDados(MenuGerente menuGer) {
+    public TelaGerCarregarDados(MenuGerente menuGer, ListaAutomoveis la, ListaCategoria lcat, ListaClientes lcli,
+                                ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp) {
         super();
         this.menuGer = menuGer;
-        this.listaAuto = new ListaAutomoveis(100);
-        this.listaCat = new ListaCategoria(100);
-        this.listaCli = new ListaClientes(100);
-        this.listaMar = new ListaMarcas(100);
-        this.listaModelo = new ListaModelo(100);
-        this.filaPedidos = new FilaPedidos();
-        this.listaLoca = new ListaLocacoes(100);
+        this.listaAuto = la;
+        this.listaCat = lcat;
+        this.listaCli = lcli;
+        this.listaMar = lmar;
+        this.listaMod = lmod;
+        this.pilhaPed = pp;
+        this.listaLoca = ll;
         this.leArquivo = new LeituraArquivoTextoTeste();
 
 
@@ -68,7 +69,7 @@ public class TelaGerCarregarDados extends Application {
     }
 
     public ListaModelo getListaModelo() {
-        return listaModelo;
+        return listaMod;
     }
 
     public ListaLocacoes getListaLoca() {
@@ -79,8 +80,8 @@ public class TelaGerCarregarDados extends Application {
         return listaCli;
     }
 
-    public FilaPedidos getFilaPedidos() {
-        return filaPedidos;
+    public PilhaPedidos getFilaPedidos() {
+        return pilhaPed;
     }
 
     public ListaMarcas getListaMar() {
@@ -142,7 +143,7 @@ public class TelaGerCarregarDados extends Application {
         });
 
         btnCarregarDados.setOnAction(e -> {
-            leArquivo.leRegistrosTexto2(listaCat,listaMar,listaModelo,listaAuto,listaCli,filaPedidos);
+            leArquivo.leRegistrosTexto2(listaCat,listaMar,listaMod,listaAuto,listaCli,pilhaPed,nomeArquivoTextField.getText());
             actiontarget.setFill(Color.GREEN);
             actiontarget.setText("Dados carregados!");
 

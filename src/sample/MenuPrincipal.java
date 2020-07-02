@@ -22,26 +22,26 @@ public class MenuPrincipal extends Application {
     private MenuFunc menuFunc;
     private MenuGerente menuGerente;
     private Cliente cliente;
-    private ListaAutomoveis listaAuto;
-    private ListaCategoria listaCat;
-    private ListaClientes listaCli;
-    private ListaMarcas listaMar;
-    private ListaModelo listaMod;
-    private ListaLocacoes listaLoc;
-    private PilhaPedidos pilhaPed;
+    private ListaAutomoveis listaAuto = new ListaAutomoveis(100);
+    private ListaCategoria listaCat = new ListaCategoria(100);
+    private ListaClientes listaCli = new ListaClientes(100);
+    private ListaMarcas listaMar = new ListaMarcas(100);
+    private ListaModelo listaMod = new ListaModelo(100);
+    private ListaLocacoes listaLoc = new ListaLocacoes(100);
+    private PilhaPedidos pilhaPed = new PilhaPedidos();
 
 
     public MenuPrincipal() {
         super();
-        menuFunc = new MenuFunc(this);
-        menuGerente = new MenuGerente(this);
-        listaAuto = new ListaAutomoveis(100);
-        listaCat = new ListaCategoria(100);
-        listaCli = new ListaClientes(100);
-        listaMar = new ListaMarcas(100);
-        listaMod = new ListaModelo(100);
-        listaLoc = new ListaLocacoes(100);
-        pilhaPed = new PilhaPedidos();
+        menuFunc = new MenuFunc(this, listaAuto, listaCat, listaCli, listaMar, listaMod, listaLoc, pilhaPed);
+        menuGerente = new MenuGerente(this, listaAuto, listaCat, listaCli, listaMar, listaMod, listaLoc, pilhaPed);
+//        listaAuto = new ListaAutomoveis(100);
+//        listaCat = new ListaCategoria(100);
+//        listaCli = new ListaClientes(100);
+//        listaMar = new ListaMarcas(100);
+//        listaMod = new ListaModelo(100);
+//        listaLoc = new ListaLocacoes(100);
+//        pilhaPed = new PilhaPedidos();
 
     }
 

@@ -46,10 +46,10 @@ public class LeituraArquivoTextoTeste {
         }
     }
 
-    public void leRegistrosTexto2(ListaCategoria lcat, ListaMarcas lmar, ListaModelo lmod, ListaAutomoveis la, ListaClientes lcli, PilhaPedidos pp) {
+    public void leRegistrosTexto2(ListaCategoria lcat, ListaMarcas lmar, ListaModelo lmod, ListaAutomoveis la, ListaClientes lcli, PilhaPedidos pp, String nomeArquivo) {
         int contComentarios = 0;
         String secao = "";
-        Path path = Paths.get("carga.txt");
+        Path path = Paths.get(nomeArquivo);
         try (BufferedReader br = Files.newBufferedReader(path, Charset.defaultCharset())) {
             String linha = null;
             while ((linha = br.readLine()) != null) {
