@@ -20,7 +20,7 @@ public class MenuFunc extends Application {
 
     private Application raiz;
     private TelaFuncCadastraCliente telaFCC;
-    //private TelaFunConsultaDispAuto
+    private TelaFuncConsultaDisponibilidade telaFCD;
     //private TelaFuncConsultaValorLocacao
     //private TelaFuncRealizaLocacao
     //private TelaFuncFinalizaLocacao
@@ -51,6 +51,7 @@ public class MenuFunc extends Application {
 
 
         telaFCC = new TelaFuncCadastraCliente(this, listaCli);
+        telaFCD = new TelaFuncConsultaDisponibilidade(this,listaCat);
 
     }
 
@@ -104,6 +105,14 @@ public class MenuFunc extends Application {
         btnCadCli.setOnAction(e -> {
             try {
                 telaFCC.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        btnConsultarDispAuto.setOnAction(e -> {
+            try {
+                telaFCD.start(thestage);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }

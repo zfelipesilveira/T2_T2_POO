@@ -1,14 +1,24 @@
 package Teste;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.util.LinkedList;
+import java.util.List;
 import java.util.ArrayList;
 public class ListaCategoria {
     public ArrayList<CategoriaAutomovel> categorias;
     private int total = 0;
     private int qtdMax;
 
+
     public ListaCategoria(int max) {
         this.qtdMax = max;
         categorias = new ArrayList<CategoriaAutomovel>(qtdMax);
+    }
+
+    public ArrayList<CategoriaAutomovel> getCategorias(){
+        return categorias;
     }
 
 

@@ -5,6 +5,7 @@ package sample;
 import Teste.*;
 import TratamentoArquivos.LeituraArquivoTextoTeste;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -27,18 +28,19 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 
     private MenuFunc menuFunc;
     private Automovel auto;
-    private ListaAutomoveis listaAuto;
+    private ListaCategoria listaCat;
     private ToggleGroup rbFisicaJuridica;
     private RadioButton rbFisica, rbJuridica;
+    private ComboBox cbCategorias;
 
 
 
 
 
-    public TelaFuncConsultaDisponibilidade(MenuFunc menuFunc, ListaAutomoveis la) {
+    public TelaFuncConsultaDisponibilidade(MenuFunc menuFunc, ListaCategoria lcat) {
         super();
         this.menuFunc = menuFunc;
-        this.listaAuto = la;
+        this.listaCat = lcat;
     }
 
     @Override
@@ -61,23 +63,33 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 
         // create labels
 
-        Label placaAuto = new Label("Digite a placa do automóvel que deseja consultar a disponibilidade");
-        painel4.add(placaAuto, 0, 1);
-
-        TextField placaAutoTextField = new TextField();
-        painel4.add(placaAutoTextField, 1, 1);
-
-
+//        Label placaAuto = new Label("Digite a placa do automóvel que deseja consultar a disponibilidade");
+//        painel4.add(placaAuto, 0, 1);
+//
+//        TextField placaAutoTextField = new TextField();
+//        painel4.add(placaAutoTextField, 1, 1);
 
 
-        Button btnCadastrarCategoria = new Button("Cadastrar");
+        CategoriaAutomovel[] listaCategorias = new CategoriaAutomovel[100];
+        listaCategorias = listaCat.getCategorias().toArray(listaCategorias);
+
+        cbCategorias = new ComboBox(FXCollections.observableArrayList(listaCategorias));
+
+//        Cliente[] listaSalvar = new Cliente[100];
+//        listaSalvar = listaCli.getClientes().toArray(listaSalvar);
+
+        //cbCategorias = new ComboBox(listaCat.getCategoriasComboBox());
+                //FlightData.getInstance().getCidadesAtendidas());
+        painel4.add(cbCategorias, 1, 2);
+
+        Button btnVerificarDisponibilidade= new Button("Verificar");
         Button btnVoltar = new Button("Voltar");
 
 
 
 
 
-        painel4.add(btnCadastrarCategoria, 1, 6);
+        painel4.add(btnVerificarDisponibilidade, 1, 6);
         painel4.add(btnVoltar, 0, 8);
 
         final Text actiontarget = new Text();
@@ -95,11 +107,11 @@ public class TelaFuncConsultaDisponibilidade extends Application {
             }
         });
 
-        btnCadastrarCategoria.setOnAction(e -> {
+        btnVerificarDisponibilidade.setOnAction(e -> {
             //CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
 
             actiontarget.setFill(Color.GREEN);
-            actiontarget.setText("Categoria cadastrada carregados!");
+            actiontarget.setText("Verificando disponibilidade");
 
 
         });
@@ -123,7 +135,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 //        });
         Scene scene4 = new Scene(painel4, 500, 400);
 
-        primaryStage.setTitle("Cadastrar categoria");
+        primaryStage.setTitle("Verificar disponibilidade");
         primaryStage.setScene(scene4);
         primaryStage.show();
     }
