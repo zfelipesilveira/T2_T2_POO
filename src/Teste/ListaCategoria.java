@@ -11,7 +11,6 @@ public class ListaCategoria {
         categorias = new ArrayList<CategoriaAutomovel>(qtdMax);
     }
 
-    // Método aparentemente não-funcional que dificultou nosso trabalho.
 
     public CategoriaAutomovel pesquisaCategoria(String nome){
         CategoriaAutomovel umaCategoria = null;

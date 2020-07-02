@@ -143,10 +143,12 @@ public class TelaGerCarregarDados extends Application {
         });
 
         btnCarregarDados.setOnAction(e -> {
-            leArquivo.leRegistrosTexto2(listaCat,listaMar,listaMod,listaAuto,listaCli,pilhaPed,nomeArquivoTextField.getText());
-            actiontarget.setFill(Color.GREEN);
-            actiontarget.setText("Dados carregados!");
-
+            if(nomeArquivoTextField.getText()=="carga.txt") {
+                leArquivo.leRegistrosTextoCarga(listaCat, listaMar, listaMod, listaAuto, listaCli, pilhaPed);
+                actiontarget.setFill(Color.GREEN);
+                actiontarget.setText("Dados carregados!");
+            }
+            //else if(nome)
 
         });
 
