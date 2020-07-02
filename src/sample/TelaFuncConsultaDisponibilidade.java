@@ -70,13 +70,13 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 //        painel4.add(placaAutoTextField, 1, 1);
 
 
-        CategoriaAutomovel[] listaCategorias = new CategoriaAutomovel[100];
-        listaCategorias = listaCat.getCategorias().toArray(listaCategorias);
+        String[] listaNomeCategorias = new String[100];
+        listaNomeCategorias = listaCat.getCategoriasNomes().toArray(listaNomeCategorias);
 
 
         Label selecionaCategoria = new Label("Seleciona a categoria");
         painel4.add(selecionaCategoria, 1, 1);
-        cbCategorias = new ComboBox(FXCollections.observableArrayList(listaCategorias));
+        cbCategorias = new ComboBox(FXCollections.observableArrayList(listaNomeCategorias));
 
 //        Cliente[] listaSalvar = new Cliente[100];
 //        listaSalvar = listaCli.getClientes().toArray(listaSalvar);
@@ -112,7 +112,8 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 
         btnVerificarDisponibilidade.setOnAction(e -> {
             //CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
-
+            String teste = cbCategorias.getSelectionModel().getSelectedItem().toString();
+            System.out.println(teste);
             actiontarget.setFill(Color.GREEN);
             actiontarget.setText("Verificando disponibilidade");
 

@@ -10,6 +10,7 @@ public class ListaCategoria {
     public ArrayList<CategoriaAutomovel> categorias;
     private int total = 0;
     private int qtdMax;
+    public ArrayList<String> categoriasNomes =  new ArrayList<String>();
 
 
     public ListaCategoria(int max) {
@@ -19,6 +20,13 @@ public class ListaCategoria {
 
     public ArrayList<CategoriaAutomovel> getCategorias(){
         return categorias;
+    }
+
+    public ArrayList<String> getCategoriasNomes(){
+        for(int i =0; i<categorias.size(); i++){
+            this.categoriasNomes.add(categorias.get(i).getNome());
+        }
+        return categoriasNomes;
     }
 
 
