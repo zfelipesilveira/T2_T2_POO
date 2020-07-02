@@ -123,7 +123,6 @@ public class LeituraArquivoTextoTeste {
                         if(dispString.equalsIgnoreCase("F")) dispBoolean = false;
                         else dispBoolean = true;
                         Automovel auto = new Automovel(placa,ano,valorDiaria,lmod.pesquisaModelo(nomeMod), dispBoolean);
-                        System.out.println(lmod.pesquisaModelo(nomeMod));
                         la.insere(auto);
                         System.out.println("Cadastrando automóveis...");
 

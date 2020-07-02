@@ -95,12 +95,16 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 
 
 
-        painel4.add(btnVerificarDisponibilidade, 1, 6);
+        painel4.add(btnVerificarDisponibilidade, 1, 4);
         painel4.add(btnVoltar, 0, 8);
 
         final Text actiontarget = new Text();
         painel4.add(actiontarget, 1, 10);
         actiontarget.setId("actiontarget");
+
+        final Text listaAutoNaTela = new Text();
+        painel4.add(listaAutoNaTela,1,12);
+        listaAutoNaTela.setId("listaAutoNaTela");
 
 
 
@@ -119,20 +123,24 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 
                 String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
                 CategoriaAutomovel categoria = listaCat.pesquisaCategoria(nomeCategoria);
-//                String automoveisDisponiveis = listaAuto.pesquisaAutoDispPorCategoria(categoria);
-//                System.out.println(automoveisDisponiveis);
-                System.out.println(listaAuto);
-
-
-
+                String automoveisDisponiveis = listaAuto.pesquisaAutoDispPorCategoria(categoria);
+                System.out.println(automoveisDisponiveis);
 
 
 
                 //System.out.println(teste);
                 //CategoriaAutomovel umaCategoria =
 
-                actiontarget.setFill(Color.GREEN);
-                actiontarget.setText("Verificando disponibilidade");
+//                actiontarget.setFill(Color.GREEN);
+//                actiontarget.setText("Verificando disponibilidade");
+
+                listaAutoNaTela.setFill(Color.GRAY);
+                String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
+                actiontarget.setText(str);
+
+
+
+
             } catch(NullPointerException np){
                 actiontarget.setFill(Color.RED);
                 actiontarget.setText("Seleciona alguma categoria");
@@ -158,7 +166,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 //        btnFinal.setOnAction(e -> {
 //            thestage.close();
 //        });
-        Scene scene4 = new Scene(painel4, 500, 400);
+        Scene scene4 = new Scene(painel4, 700, 600);
 
         primaryStage.setTitle("Verificar disponibilidade");
         primaryStage.setScene(scene4);

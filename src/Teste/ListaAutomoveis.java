@@ -24,7 +24,7 @@ public class ListaAutomoveis {
         String str = "";
         for (int i = 0; i<automoveis.size(); i++){
             if(automoveis.get(i).getModelo().getCategoria() == categoria){
-                str = automoveis.get(i).toString() + "\n";
+                str = str + automoveis.get(i).toString() + "\n";
 
             }
         }
