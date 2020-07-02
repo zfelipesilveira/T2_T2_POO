@@ -113,6 +113,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
         btnVerificarDisponibilidade.setOnAction(e -> {
             try {//CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
                 //String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
+
                 String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
 
 

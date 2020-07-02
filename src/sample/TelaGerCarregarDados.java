@@ -114,6 +114,17 @@ public class TelaGerCarregarDados extends Application {
         TextField nomeArquivoTextField = new TextField();
         painel3.add(nomeArquivoTextField, 1, 1);
 
+        nomeArquivoTextField.setText("exemplo.txt");
+
+        nomeArquivoTextField.setId("textField");
+        nomeArquivoTextField.setPromptText("Search");
+
+
+
+
+//        nomeArquivoTextField.setPromptText("dd/mm/aaaa"); //to set the hint text
+//        nomeArquivoTextField.getParent().requestFocus();
+
 
 
 
@@ -147,6 +158,9 @@ public class TelaGerCarregarDados extends Application {
                 leArquivo.leRegistrosTextoCarga(listaCat, listaMar, listaMod, listaAuto, listaCli, pilhaPed);
                 actiontarget.setFill(Color.GREEN);
                 actiontarget.setText("Dados carregados!");
+            }
+            else if(nomeArquivoTextField.getText().equals("clientes.txt")){
+
             }
             //else if(nome)
 
