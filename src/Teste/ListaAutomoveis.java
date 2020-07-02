@@ -23,7 +23,7 @@ public class ListaAutomoveis {
     public String pesquisaAutoDispPorCategoria(CategoriaAutomovel categoria){
         String str = "";
         for (int i = 0; i<automoveis.size(); i++){
-            if(automoveis.get(i).getModelo().getCategoria() == categoria && automoveis.get(i).getDisponivel() == true){
+            if(automoveis.get(i).getModelo().getCategoria() == categoria){
                 str = automoveis.get(i).toString() + "\n";
 
             }
@@ -84,6 +84,19 @@ public class ListaAutomoveis {
             }
             System.out.println(str);
         }
+    }
+
+    public String toString() {
+        if (total < 1) System.out.println("Não há automóveis cadastrados");
+        if (total > 0) {
+            String str = " ";
+            str = "Lista de Automóveis:" + "\n";
+            for (int i = 0; i < automoveis.size(); i++) {
+                str = str + automoveis.get(i).toString() + "\n";
+            }
+            return str;
+        }
+        return "Sem automóveis";
     }
 
 

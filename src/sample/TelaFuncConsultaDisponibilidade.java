@@ -119,8 +119,10 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 
                 String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
                 CategoriaAutomovel categoria = listaCat.pesquisaCategoria(nomeCategoria);
-                String automoveisDisponiveis = listaAuto.pesquisaAutoDispPorCategoria(categoria);
-                System.out.println(automoveisDisponiveis);
+//                String automoveisDisponiveis = listaAuto.pesquisaAutoDispPorCategoria(categoria);
+//                System.out.println(automoveisDisponiveis);
+                System.out.println(listaAuto);
+
 
 
 

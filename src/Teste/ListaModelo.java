@@ -16,8 +16,9 @@ public class ListaModelo{
 
     public ModeloAutomovel pesquisaModelo(String nome){
         ModeloAutomovel umModelo = null;
+        String umNome;
         for(int i = 0; i<modelos.size(); i++){
-            String umNome = modelos.get(i).getNome();
+            umNome = modelos.get(i).getNome();
             if(umNome.equals(nome)){
                 umModelo = modelos.get(i);
             }

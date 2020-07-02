@@ -16,10 +16,10 @@
 4;Classe A;100000.00;Sedan;Mercedes;I;10
 // Automovel: placa ; nome do modelo ; ano ; valor de diária ; disponibilidade (T-verdadeiro;F-falso)
 [AUTOMOVEL]
-AAA-1A11;compass;2020;100.00;T
-BBB-B2BB;cherokee;2020;200.00;T
-CCC-3C33;civic;2019;10.00;T
-DDD-4D44;classe a;2019;10.00;T
+AAA-1A11;Compass;2020;100.00;T
+BBB-B2BB;Cherokee;2020;200.00;T
+CCC-3C33;Civic;2019;10.00;T
+DDD-4D44;Classe A;2019;10.00;T
 // Cliente: CPF ou CNPJ; nome ; telefone; tipo (F-pessoa física, J-pessoa jurídica)
 [CLIENTE]
 355.014.791-09;Pedro da Silva;997070777;F

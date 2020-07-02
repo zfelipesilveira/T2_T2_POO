@@ -95,6 +95,12 @@ public class LeituraArquivoTextoTeste {
                                     lcat.pesquisaCategoria(nomeCat),valorMod,ipiTaxa);
                             lmod.insere(modi);
                         }
+                        else {
+                            ModeloImportado modi = new ModeloImportado(nomeMod, lmar.pesquisaMarca(nomeMar),
+                                    lcat.pesquisaCategoria(nomeCat), valorMod, ipiTaxa);
+                            lmod.insere(modi);
+                        }
+
                         System.out.println("Cadastrando modelos...");
 
 //                        System.out.println(sc.next());
@@ -117,6 +123,7 @@ public class LeituraArquivoTextoTeste {
                         if(dispString.equalsIgnoreCase("F")) dispBoolean = false;
                         else dispBoolean = true;
                         Automovel auto = new Automovel(placa,ano,valorDiaria,lmod.pesquisaModelo(nomeMod), dispBoolean);
+                        System.out.println(lmod.pesquisaModelo(nomeMod));
                         la.insere(auto);
                         System.out.println("Cadastrando automóveis...");
 
