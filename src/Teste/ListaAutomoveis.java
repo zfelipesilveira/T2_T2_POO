@@ -66,6 +66,10 @@ public class ListaAutomoveis {
         return automoveis.size();
     }
 
+    public int getTotal(){
+        return total;
+    }
+
     public Automovel get(int index){
         return automoveis.get(index);
     }
