@@ -72,6 +72,10 @@ public class ListaCategoria {
         return false;
     }
 
+    public int getTotal(){
+        return total;
+    }
+
     public void mostraTotal(){
         System.out.print(total);
     }

@@ -8,6 +8,7 @@ public class Automovel {
     public ModeloAutomovel modelo;
 
 
+
     public Automovel(String placa, int ano, double valorDiaria, ModeloAutomovel modelo){
         this.placa = placa;
         this.ano = ano;
@@ -19,6 +20,8 @@ public class Automovel {
         if (d==1) disponivel = true;
         else disponivel = false;
     }
+
+
 
     public boolean getDisponivel(){
         return disponivel;

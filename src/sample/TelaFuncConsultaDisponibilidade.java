@@ -70,7 +70,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 //        painel4.add(placaAutoTextField, 1, 1);
 
 
-        String[] listaNomeCategorias = new String[100];
+        String[] listaNomeCategorias = new String[listaCat.getTotal()];
         listaNomeCategorias = listaCat.getCategoriasNomes().toArray(listaNomeCategorias);
 
 
@@ -111,12 +111,22 @@ public class TelaFuncConsultaDisponibilidade extends Application {
         });
 
         btnVerificarDisponibilidade.setOnAction(e -> {
-            //CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
-            String teste = cbCategorias.getSelectionModel().getSelectedItem().toString();
-            System.out.println(teste);
-            actiontarget.setFill(Color.GREEN);
-            actiontarget.setText("Verificando disponibilidade");
+            try {//CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
+                //String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
+                String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
 
+
+
+                //System.out.println(teste);
+                //CategoriaAutomovel umaCategoria =
+
+                actiontarget.setFill(Color.GREEN);
+                actiontarget.setText("Verificando disponibilidade");
+            } catch(NullPointerException np){
+                actiontarget.setFill(Color.RED);
+                actiontarget.setText("Seleciona alguma categoria");
+                np.printStackTrace();
+            }
 
         });
 
