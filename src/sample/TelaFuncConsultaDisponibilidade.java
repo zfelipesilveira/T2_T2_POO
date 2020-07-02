@@ -73,6 +73,9 @@ public class TelaFuncConsultaDisponibilidade extends Application {
         CategoriaAutomovel[] listaCategorias = new CategoriaAutomovel[100];
         listaCategorias = listaCat.getCategorias().toArray(listaCategorias);
 
+
+        Label selecionaCategoria = new Label("Seleciona a categoria");
+        painel4.add(selecionaCategoria, 1, 1);
         cbCategorias = new ComboBox(FXCollections.observableArrayList(listaCategorias));
 
 //        Cliente[] listaSalvar = new Cliente[100];
