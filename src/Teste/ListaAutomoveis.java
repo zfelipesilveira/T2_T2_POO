@@ -5,6 +5,7 @@ public class ListaAutomoveis {
     public ArrayList<Automovel> automoveis;
     private int total = 0;
     private int qtdMax;
+    public ArrayList<Automovel> automoveisDisponiveis = new ArrayList<Automovel>();
 
     public ListaAutomoveis(int max) {
         this.qtdMax = max;
@@ -17,6 +18,17 @@ public class ListaAutomoveis {
                 System.out.println(automoveis.get(i).toString());
             }
         }
+    }
+
+    public String pesquisaAutoDispPorCategoria(CategoriaAutomovel categoria){
+        String str = "";
+        for (int i = 0; i<automoveis.size(); i++){
+            if(automoveis.get(i).getModelo().getCategoria() == categoria && automoveis.get(i).getDisponivel() == true){
+                str = automoveis.get(i).toString() + "\n";
+
+            }
+        }
+        return str;
     }
 
     public Automovel pesquisaAutomovel(String placa){

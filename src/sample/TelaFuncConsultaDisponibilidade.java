@@ -29,6 +29,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
     private MenuFunc menuFunc;
     private Automovel auto;
     private ListaCategoria listaCat;
+    private ListaAutomoveis listaAuto;
     private ToggleGroup rbFisicaJuridica;
     private RadioButton rbFisica, rbJuridica;
     private ComboBox cbCategorias;
@@ -37,10 +38,12 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 
 
 
-    public TelaFuncConsultaDisponibilidade(MenuFunc menuFunc, ListaCategoria lcat) {
+    public TelaFuncConsultaDisponibilidade(MenuFunc menuFunc, ListaCategoria lcat, ListaAutomoveis la) {
         super();
         this.menuFunc = menuFunc;
         this.listaCat = lcat;
+        this.listaAuto = la;
+
     }
 
     @Override
@@ -115,6 +118,11 @@ public class TelaFuncConsultaDisponibilidade extends Application {
                 //String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
 
                 String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
+                CategoriaAutomovel categoria = listaCat.pesquisaCategoria(nomeCategoria);
+                String automoveisDisponiveis = listaAuto.pesquisaAutoDispPorCategoria(categoria);
+                System.out.println(automoveisDisponiveis);
+
+
 
 
 

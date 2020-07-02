@@ -16,6 +16,14 @@ public class Automovel {
         this.modelo = modelo;
     }
 
+    public Automovel(String placa, int ano, double valorDiaria, ModeloAutomovel modelo, boolean disp){
+        this.placa = placa;
+        this.ano = ano;
+        this.valorDiaria = valorDiaria;
+        this.modelo = modelo;
+        this.disponivel = disp;
+    }
+
     public void setDisponivel(int d){
         if (d==1) disponivel = true;
         else disponivel = false;
