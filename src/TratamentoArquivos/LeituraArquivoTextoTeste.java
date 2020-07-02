@@ -46,7 +46,7 @@ public class LeituraArquivoTextoTeste {
         }
     }
 
-    public void leRegistrosTexto2(ListaCategoria lcat, ListaMarcas lmar, ListaModelo lmod, ListaAutomoveis la, ListaClientes lcli, FilaPedidos fp) {
+    public void leRegistrosTexto2(ListaCategoria lcat, ListaMarcas lmar, ListaModelo lmod, ListaAutomoveis la, ListaClientes lcli, PilhaPedidos pp) {
         int contComentarios = 0;
         String secao = "";
         Path path = Paths.get("carga.txt");
@@ -150,7 +150,7 @@ public class LeituraArquivoTextoTeste {
                         String dataFim = sc.next();
                         Pedido ped = new Pedido(codPedido,cpfcnpjped,lcat.pesquisaCategoria(nomeCategoria),dataInicio, dataFim);
                         //System.out.println(ped.toString());
-                        fp.insere(ped);
+                        pp.insere(ped);
                         System.out.println("Cadastrando pedidos" + "\n");
 
                     }

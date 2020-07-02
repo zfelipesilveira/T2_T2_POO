@@ -27,7 +27,7 @@ public class MenuPrincipal extends Application {
     private ListaClientes listaCli = new ListaClientes(100);
     private ListaMarcas listaMar = new ListaMarcas(100);
     private ListaModelo listaMod = new ListaModelo(100);
-    private FilaPedidos filaPed = new FilaPedidos();
+    private PilhaPedidos pilhaPed = new PilhaPedidos();
     private ListaLocacoes listaLoc = new ListaLocacoes(100);
 
 

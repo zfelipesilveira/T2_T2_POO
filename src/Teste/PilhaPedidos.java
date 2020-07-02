@@ -3,14 +3,15 @@ package Teste;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
-public class FilaPedidos {
-    private Queue<Pedido> pedidos;
+public class PilhaPedidos {
+    private Stack<Pedido> pedidos;
     private int total = 0;
     private int qtdMax;
 
-    public FilaPedidos() {
-        pedidos = new LinkedList<Pedido>();
+    public PilhaPedidos() {
+        pedidos = new Stack<Pedido>();
     }
 
 //    public Pedido pesquisaLocacoes(String codPedido){
@@ -24,16 +25,14 @@ public class FilaPedidos {
 //    }
 
     public void insere(Pedido novoPedido) {
-        pedidos.add(novoPedido);
+        pedidos.push(novoPedido);
         total = total +1;
 
     }
 
-    public void remove() {
-        pedidos.remove();
-    }
 
-    public Queue<Pedido> getPedidos() {
+
+    public Stack<Pedido> getPedidos() {
         return pedidos;
     }
 
