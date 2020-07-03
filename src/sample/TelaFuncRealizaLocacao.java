@@ -38,7 +38,7 @@ public class TelaFuncRealizaLocacao extends Application {
 
 
 
-    public TelaFuncConsultaValorLocacao(MenuFunc menuFunc, ListaCategoria lcat, ListaAutomoveis la) {
+    public TelaFuncRealizaLocacao(MenuFunc menuFunc, ListaCategoria lcat, ListaAutomoveis la) {
         super();
         this.menuFunc = menuFunc;
         this.listaCat = lcat;
@@ -121,6 +121,8 @@ public class TelaFuncRealizaLocacao extends Application {
         final Text actiontarget = new Text();
         painel4.add(actiontarget, 1, 10);
         actiontarget.setId("actiontarget");
+
+
 
         final Text listaAutoNaTela = new Text();
         painel4.add(listaAutoNaTela,1,12);

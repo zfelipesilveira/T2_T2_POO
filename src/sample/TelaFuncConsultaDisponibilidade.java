@@ -93,7 +93,9 @@ public class TelaFuncConsultaDisponibilidade extends Application {
         Button btnVoltar = new Button("Voltar");
 
 
-
+        TextArea listaDeAutomoveis = new TextArea();
+        painel4.add(listaDeAutomoveis,1,8);
+        listaDeAutomoveis.setId("listaDeAutomoveis");
 
 
         painel4.add(btnVerificarDisponibilidade, 1, 4);
@@ -103,9 +105,9 @@ public class TelaFuncConsultaDisponibilidade extends Application {
         painel4.add(actiontarget, 1, 10);
         actiontarget.setId("actiontarget");
 
-        final Text listaAutoNaTela = new Text();
-        painel4.add(listaAutoNaTela,1,12);
-        listaAutoNaTela.setId("listaAutoNaTela");
+//        final Text listaAutoNaTela = new Text();
+//        painel4.add(listaAutoNaTela,1,12);
+//        listaAutoNaTela.setId("listaAutoNaTela");
 
 
 
@@ -127,18 +129,14 @@ public class TelaFuncConsultaDisponibilidade extends Application {
                 System.out.println(automoveisDisponiveis);
 
 
-
-                //System.out.println(teste);
-                //CategoriaAutomovel umaCategoria =
-
-//                actiontarget.setFill(Color.GREEN);
-//                actiontarget.setText("Verificando disponibilidade");
-
-                listaAutoNaTela.setFill(Color.GRAY);
                 String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
-                actiontarget.setText(str);
+                listaDeAutomoveis.setText(str);
 
-                System.out.println(listaCat.getTotal());
+//                listaAutoNaTela.setFill(Color.GRAY);
+//                String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
+//                actiontarget.setText(str);
+//
+//                System.out.println(listaCat.getTotal());
 
 
 
