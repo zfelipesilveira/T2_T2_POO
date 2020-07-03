@@ -94,7 +94,7 @@ public class TelaGerCadastraCategoria extends Application {
 
         btnCadastrarCategoria.setOnAction(e -> {
             CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
-
+            listaCat.insere(cat);
             actiontarget.setFill(Color.GREEN);
             actiontarget.setText("Categoria cadastrada!");
 
