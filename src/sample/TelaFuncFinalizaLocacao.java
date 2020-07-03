@@ -75,37 +75,29 @@ public class TelaFuncFinalizaLocacao extends Application {
         TextField placaTextField = new TextField();
         painel4.add(placaTextField,1,4);
 
-        Label digitaDataInicio = new Label("Digite a data de início");
-        painel4.add(digitaDataInicio,0,5);
-        TextField dataInicioTextField = new TextField();
-        painel4.add(dataInicioTextField,1,5);
 
-        Label digitaDataFinal = new Label("Digite a data final");
-        painel4.add(digitaDataFinal,0,6);
-        TextField dataFinalTextField = new TextField();
-        painel4.add(dataFinalTextField,1,6);
 
 
 
         Button btnVerLocacao = new Button("Ver locação");
 
-        Button btnFinalizarLocacao = new Button("Finalizar locação");
+        Button btnFinalizarLocacao = new Button("Confirmar finalização");
 
         Button btnVoltar = new Button("Voltar");
 
 
-        painel4.add(btnVerLocacao, 2, 2);
-        painel4.add(btnFinalizarLocacao,2,6);
+        painel4.add(btnVerLocacao, 1, 5);
+        painel4.add(btnFinalizarLocacao,1,9);
         painel4.add(btnVoltar, 0, 11);
 
         final Text actiontarget = new Text();
-        painel4.add(actiontarget, 1, 12);
+        painel4.add(actiontarget, 1, 10);
         actiontarget.setId("actiontarget");
 
 
 
         final Text dadosLocacao = new Text();
-        painel4.add(dadosLocacao,2,12);
+        painel4.add(dadosLocacao,1,8);
         dadosLocacao.setId("listaAutoNaTela");
 
 
@@ -119,61 +111,42 @@ public class TelaFuncFinalizaLocacao extends Application {
             }
         });
 
-        btnBuscarAutomoveisDisp.setOnAction(e -> {
-            try {//CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
-                //String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
-
-                String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
-                CategoriaAutomovel categoria = listaCat.pesquisaCategoria(nomeCategoria);
-                String automoveisDisponiveis = listaAuto.pesquisaAutoDispPorCategoria(categoria);
-                System.out.println(automoveisDisponiveis);
-
-//                listaAutoNaTela.setFill(Color.GRAY);
-//                String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
-//                actiontarget.setText(str);
-
-                String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
-                listaDeAutomoveis.setText(str);
-
-
-
-
-            } catch(NullPointerException np){
-                actiontarget.setFill(Color.RED);
-                actiontarget.setText("Selecione alguma categoria");
-                np.printStackTrace();
-            }
-
-        });
-
-        btnRealizarLocacao.setOnAction(e -> {
+        btnVerLocacao.setOnAction(e -> {
             try {
-                if(cpfcnpjTextField.getText().isEmpty() || placaTextField.getText().isEmpty() ||
-                        dataInicioTextField.getText().isEmpty() || dataFinalTextField.getText().isEmpty()){
+                if(placaTextField.getText().isEmpty()){
                     actiontarget.setFill(Color.FIREBRICK);
-                    actiontarget.setText("Preencha todos os campos");
+                    actiontarget.setText("Digite uma placa");
                 }
                 else {
-                    String cpfcnpj = cpfcnpjTextField.getText();
                     String placaAuto = placaTextField.getText();
-                    String dataInicio = dataInicioTextField.getText();
-                    String dataFinal = dataFinalTextField.getText();
-                    Automovel auto = listaAuto.pesquisaAutomovel(placaAuto);
-                    Cliente cliente = listaCli.pesquisaClientePorCpf(cpfcnpj);
-                    Locacao loc = new Locacao(cliente, auto, dataInicio, dataFinal);
-                    loc.calculaPeriodo();
-                    listaLoca.insere(loc);
-                    actiontarget.setFill(Color.GREEN);
-                    actiontarget.setText("Locação realizada");
-
-                    loc.setValorLocacao();
+                    Locacao loc = listaLoca.pesquisaLocacoes(placaAuto);
                     dadosLocacao.setFill(Color.BLACK);
                     dadosLocacao.setText(loc.toString());
 
                     System.out.println(listaLoca);
 
-                    double valorLocacao = loc.getValorLocacao();
-                    System.out.println("Valor da locação: " + valorLocacao);
+                }
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+
+        btnFinalizarLocacao.setOnAction(e -> {
+            try {
+                if(placaTextField.getText().isEmpty()){
+                    actiontarget.setFill(Color.FIREBRICK);
+                    actiontarget.setText("Digite uma placa");
+                }
+                else {
+                    String placaAuto = placaTextField.getText();
+                    Locacao loc = listaLoca.pesquisaLocacoes(placaAuto);
+                    Automovel auto = listaAuto.pesquisaAutomovel(placaAuto);
+                    auto.setDisponivel(1);
+                    listaLoca.remove(loc);
+                    actiontarget.setFill(Color.GREEN);
+                    actiontarget.setText("Locação finalizada");
                 }
 
             } catch (Exception ex) {
@@ -190,7 +163,7 @@ public class TelaFuncFinalizaLocacao extends Application {
 //        btnFinal.setOnAction(e -> {
 //            thestage.close();
 //        });
-        Scene scene4 = new Scene(painel4, 900, 750);
+        Scene scene4 = new Scene(painel4, 500, 300);
 
         primaryStage.setTitle("Realizar locação");
         primaryStage.setScene(scene4);
