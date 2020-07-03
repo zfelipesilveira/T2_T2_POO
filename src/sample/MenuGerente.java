@@ -58,7 +58,7 @@ public class MenuGerente extends Application {
 
 
         telaGerCarregarDados = new TelaGerCarregarDados(this,la,lcat,lcli,lmar,lmod, ll, pp);
-        telaGerCadastraCategoria = new TelaGerCadastraCategoria(this);
+        telaGerCadastraCategoria = new TelaGerCadastraCategoria(this,listaCat);
         telaGerCadastraMarca = new TelaGerCadastraMarca(this);
 
 

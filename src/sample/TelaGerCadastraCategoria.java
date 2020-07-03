@@ -28,16 +28,14 @@ public class TelaGerCadastraCategoria extends Application {
     private MenuGerente menuGer;
     private Cliente cliente;
     private ListaClientes lista = new ListaClientes(100);
-    private ToggleGroup rbFisicaJuridica;
-    private RadioButton rbFisica, rbJuridica;
+    private ListaCategoria listaCat;
 
 
 
-
-
-    public TelaGerCadastraCategoria(MenuGerente menuGer) {
+    public TelaGerCadastraCategoria(MenuGerente menuGer, ListaCategoria lcat) {
         super();
         this.menuGer = menuGer;
+        this.listaCat = lcat;
     }
 
     @Override
@@ -98,7 +96,7 @@ public class TelaGerCadastraCategoria extends Application {
             CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
 
             actiontarget.setFill(Color.GREEN);
-            actiontarget.setText("Categoria cadastrada carregados!");
+            actiontarget.setText("Categoria cadastrada!");
 
 
         });
