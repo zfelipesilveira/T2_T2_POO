@@ -100,6 +100,11 @@ public class TelaFuncConsultaValorLocacao extends Application {
         TextField dataFinalTextField = new TextField();
         painel4.add(dataFinalTextField,1,5);
 
+        TextArea listaDeAutomoveis = new TextArea();
+        painel4.add(listaDeAutomoveis,1,8);
+        listaDeAutomoveis.setId("listaDeAutomoveis");
+
+
 
 
         painel4.add(cbCategorias, 1, 2);
@@ -119,7 +124,7 @@ public class TelaFuncConsultaValorLocacao extends Application {
         painel4.add(btnVoltar, 0, 8);
 
         final Text actiontarget = new Text();
-        painel4.add(actiontarget, 1, 10);
+        painel4.add(actiontarget, 1, 9);
         actiontarget.setId("actiontarget");
 
         final Text listaAutoNaTela = new Text();
@@ -146,9 +151,12 @@ public class TelaFuncConsultaValorLocacao extends Application {
                 String automoveisDisponiveis = listaAuto.pesquisaAutoDispPorCategoria(categoria);
                 System.out.println(automoveisDisponiveis);
 
-                listaAutoNaTela.setFill(Color.GRAY);
+//                listaAutoNaTela.setFill(Color.GRAY);
+//                String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
+//                actiontarget.setText(str);
+
                 String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
-                actiontarget.setText(str);
+                listaDeAutomoveis.setText(str);
 
 
 
@@ -170,6 +178,9 @@ public class TelaFuncConsultaValorLocacao extends Application {
                 Locacao loc = new Locacao(auto,dataInicio,dataFinal);
                 loc.calculaPeriodo();
                 double valorLocacao = loc.getValorLocacao();
+                actiontarget.setFill(Color.BLACK);
+                String str = "Valor da locação:" + valorLocacao;
+                actiontarget.setText(str);
                 System.out.println("Valor da locação: " + valorLocacao);
 
 
@@ -187,9 +198,9 @@ public class TelaFuncConsultaValorLocacao extends Application {
 //        btnFinal.setOnAction(e -> {
 //            thestage.close();
 //        });
-        Scene scene4 = new Scene(painel4, 700, 600);
+        Scene scene4 = new Scene(painel4, 900, 750);
 
-        primaryStage.setTitle("Verificar disponibilidade");
+        primaryStage.setTitle("Consultar valor de locação");
         primaryStage.setScene(scene4);
         primaryStage.show();
     }

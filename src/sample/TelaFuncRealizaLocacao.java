@@ -189,7 +189,7 @@ public class TelaFuncRealizaLocacao extends Application {
 //        btnFinal.setOnAction(e -> {
 //            thestage.close();
 //        });
-        Scene scene4 = new Scene(painel4, 700, 600);
+        Scene scene4 = new Scene(painel4, 900, 750);
 
         primaryStage.setTitle("Verificar disponibilidade");
         primaryStage.setScene(scene4);
