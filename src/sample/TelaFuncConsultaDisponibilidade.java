@@ -77,7 +77,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
         listaNomeCategorias = listaCat.getCategoriasNomes().toArray(listaNomeCategorias);
 
 
-        Label selecionaCategoria = new Label("Seleciona a categoria");
+        Label selecionaCategoria = new Label("Selecione a categoria");
         painel4.add(selecionaCategoria, 1, 1);
         cbCategorias = new ComboBox(FXCollections.observableArrayList(listaNomeCategorias));
 
@@ -87,6 +87,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
         //cbCategorias = new ComboBox(listaCat.getCategoriasComboBox());
                 //FlightData.getInstance().getCidadesAtendidas());
         painel4.add(cbCategorias, 1, 2);
+
 
         Button btnVerificarDisponibilidade= new Button("Verificar");
         Button btnVoltar = new Button("Voltar");
@@ -118,8 +119,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
         });
 
         btnVerificarDisponibilidade.setOnAction(e -> {
-            try {//CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
-                //String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
+            try {
 
                 String nomeCategoria = cbCategorias.getSelectionModel().getSelectedItem().toString();
                 CategoriaAutomovel categoria = listaCat.pesquisaCategoria(nomeCategoria);
@@ -137,6 +137,8 @@ public class TelaFuncConsultaDisponibilidade extends Application {
                 listaAutoNaTela.setFill(Color.GRAY);
                 String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
                 actiontarget.setText(str);
+
+                System.out.println(listaCat.getTotal());
 
 
 

@@ -156,8 +156,8 @@ public class LeituraArquivoTextoTeste {
                         String dataInicio = sc.next();
                         String dataFim = sc.next();
                         Pedido ped = new Pedido(codPedido,cpfcnpjped,lcat.pesquisaCategoria(nomeCategoria),dataInicio, dataFim);
-                        //System.out.println(ped.toString());
                         pp.insere(ped);
+
                         System.out.println("Cadastrando pedidos" + "\n");
 
                     }

@@ -59,7 +59,7 @@ public class TelaFuncConsultaValorLocacao extends Application {
         painel4.setPadding(new Insets(25, 25, 25, 25));
         painel4.setGridLinesVisible(false);
 
-        Text scenetitle = new Text("Consulta de disponibilidade");
+        Text scenetitle = new Text("Consultar valor de locação");
         scenetitle.setId("welcome-text");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         painel4.add(scenetitle, 0, 0, 2, 1);
@@ -76,28 +76,46 @@ public class TelaFuncConsultaValorLocacao extends Application {
         String[] listaNomeCategorias = new String[listaCat.getTotal()];
         listaNomeCategorias = listaCat.getCategoriasNomes().toArray(listaNomeCategorias);
 
-        String[] placaAutomoveis = new String [listaAuto.ge]
+//        String[] listaplacaAutomoveis = new String [listaAuto.getTotal()];
+//        listaplacaAutomoveis = listaAuto.pesquisaListaAutoDisponiveis()
+
 
 
         Label selecionaCategoria = new Label("Seleciona a categoria");
         painel4.add(selecionaCategoria, 1, 1);
         cbCategorias = new ComboBox(FXCollections.observableArrayList(listaNomeCategorias));
 
-//        Cliente[] listaSalvar = new Cliente[100];
-//        listaSalvar = listaCli.getClientes().toArray(listaSalvar);
+        Label digitaPlaca = new Label("Digite a placa");
+        painel4.add(digitaPlaca,0,3);
+        TextField placaTextField = new TextField();
+        painel4.add(placaTextField,1,3);
 
-        //cbCategorias = new ComboBox(listaCat.getCategoriasComboBox());
-        //FlightData.getInstance().getCidadesAtendidas());
+        Label digitaDataInicio = new Label("Digite a data de início");
+        painel4.add(digitaDataInicio,0,4);
+        TextField dataInicioTextField = new TextField();
+        painel4.add(dataInicioTextField,1,4);
+
+        Label digitaDataFinal = new Label("Digite a data final");
+        painel4.add(digitaDataFinal,0,5);
+        TextField dataFinalTextField = new TextField();
+        painel4.add(dataFinalTextField,1,5);
+
+
+
         painel4.add(cbCategorias, 1, 2);
 
         Button btnBuscarAutomoveisDisp = new Button("Buscar automóveis");
+
+        Button btnConsultarValor = new Button("Consultar valor");
+
         Button btnVoltar = new Button("Voltar");
 
 
 
 
 
-        painel4.add(btnBuscarAutomoveisDisp, 1, 4);
+        painel4.add(btnBuscarAutomoveisDisp, 2, 2);
+        painel4.add(btnConsultarValor,2,5);
         painel4.add(btnVoltar, 0, 8);
 
         final Text actiontarget = new Text();
@@ -128,14 +146,6 @@ public class TelaFuncConsultaValorLocacao extends Application {
                 String automoveisDisponiveis = listaAuto.pesquisaAutoDispPorCategoria(categoria);
                 System.out.println(automoveisDisponiveis);
 
-
-
-                //System.out.println(teste);
-                //CategoriaAutomovel umaCategoria =
-
-//                actiontarget.setFill(Color.GREEN);
-//                actiontarget.setText("Verificando disponibilidade");
-
                 listaAutoNaTela.setFill(Color.GRAY);
                 String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
                 actiontarget.setText(str);
@@ -145,19 +155,28 @@ public class TelaFuncConsultaValorLocacao extends Application {
 
             } catch(NullPointerException np){
                 actiontarget.setFill(Color.RED);
-                actiontarget.setText("Seleciona alguma categoria");
+                actiontarget.setText("Selecione alguma categoria");
                 np.printStackTrace();
             }
 
         });
 
-//        btnCadastrar.setOnAction(e -> {
-//            try {
-//                raiz.start(thestage);
-//            } catch (Exception ex) {
-//                ex.printStackTrace();
-//            }
-//        });
+        btnConsultarValor.setOnAction(e -> {
+            try {
+                String placaAuto = placaTextField.getText();
+                String dataInicio = dataInicioTextField.getText();
+                String dataFinal = dataFinalTextField.getText();
+                Automovel auto = listaAuto.pesquisaAutomovel(placaAuto);
+                Locacao loc = new Locacao(auto,dataInicio,dataFinal);
+                loc.calculaPeriodo();
+                double valorLocacao = loc.getValorLocacao();
+                System.out.println("Valor da locação: " + valorLocacao);
+
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
 
 //        btnCadCli.setOnAction(e -> {
 //            try {
