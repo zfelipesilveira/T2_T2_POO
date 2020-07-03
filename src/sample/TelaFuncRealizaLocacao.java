@@ -30,6 +30,7 @@ public class TelaFuncRealizaLocacao extends Application {
     private Automovel auto;
     private ListaCategoria listaCat;
     private ListaAutomoveis listaAuto;
+    private ListaClientes listaCli;
     private ToggleGroup rbFisicaJuridica;
     private RadioButton rbFisica, rbJuridica;
     private ComboBox cbCategorias;
@@ -38,11 +39,12 @@ public class TelaFuncRealizaLocacao extends Application {
 
 
 
-    public TelaFuncRealizaLocacao(MenuFunc menuFunc, ListaCategoria lcat, ListaAutomoveis la) {
+    public TelaFuncRealizaLocacao(MenuFunc menuFunc, ListaCategoria lcat, ListaAutomoveis la, ListaClientes lcli) {
         super();
         this.menuFunc = menuFunc;
         this.listaCat = lcat;
         this.listaAuto = la;
+        this.listaCli = lcli;
 
     }
 
@@ -59,7 +61,7 @@ public class TelaFuncRealizaLocacao extends Application {
         painel4.setPadding(new Insets(25, 25, 25, 25));
         painel4.setGridLinesVisible(false);
 
-        Text scenetitle = new Text("Consultar valor de locação");
+        Text scenetitle = new Text("Realizar locação");
         scenetitle.setId("welcome-text");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         painel4.add(scenetitle, 0, 0, 2, 1);
@@ -85,20 +87,48 @@ public class TelaFuncRealizaLocacao extends Application {
         painel4.add(selecionaCategoria, 1, 1);
         cbCategorias = new ComboBox(FXCollections.observableArrayList(listaNomeCategorias));
 
+
+        Label digitaCPFCNPJ = new Label("Digite o CPF/CNPJ do cliente");
+        painel4.add(digitaCPFCNPJ,0,3);
+        TextField cpfcnpjTextField = new TextField();
+        painel4.add(cpfcnpjTextField,1,3);
+
+
         Label digitaPlaca = new Label("Digite a placa");
-        painel4.add(digitaPlaca,0,3);
+        painel4.add(digitaPlaca,0,4);
         TextField placaTextField = new TextField();
-        painel4.add(placaTextField,1,3);
+        painel4.add(placaTextField,1,4);
 
         Label digitaDataInicio = new Label("Digite a data de início");
-        painel4.add(digitaDataInicio,0,4);
+        painel4.add(digitaDataInicio,0,5);
         TextField dataInicioTextField = new TextField();
-        painel4.add(dataInicioTextField,1,4);
+        painel4.add(dataInicioTextField,1,5);
 
         Label digitaDataFinal = new Label("Digite a data final");
-        painel4.add(digitaDataFinal,0,5);
+        painel4.add(digitaDataFinal,0,6);
         TextField dataFinalTextField = new TextField();
-        painel4.add(dataFinalTextField,1,5);
+        painel4.add(dataFinalTextField,1,6);
+
+
+        Label labelListaDeAutomoveis = new Label("Lista de automóveis disponíveis");
+        painel4.add(labelListaDeAutomoveis,0,9);
+        TextArea listaDeAutomoveis = new TextArea();
+        listaDeAutomoveis.setPrefHeight(125);
+        listaDeAutomoveis.setPrefWidth(400);
+//        textArea.setPrefHeight(height);  //sets height of the TextArea to 400 pixels
+//        textArea.setPrefWidth(width);
+        painel4.add(listaDeAutomoveis,1,9);
+        listaDeAutomoveis.setId("listaDeAutomoveis");
+
+        Label labelListaDeClientes = new Label("Lista de clientes cadastrados");
+        painel4.add(labelListaDeClientes,0,10);
+        TextArea listaDeClientes = new TextArea();
+        listaDeClientes.setPrefHeight(125);
+        listaDeClientes.setPrefWidth(400);
+        listaDeClientes.setText(listaCli.toString());
+        painel4.add(listaDeClientes,1,10);
+        listaDeAutomoveis.setId("listaDeClientes");
+
 
 
 
@@ -106,7 +136,7 @@ public class TelaFuncRealizaLocacao extends Application {
 
         Button btnBuscarAutomoveisDisp = new Button("Buscar automóveis");
 
-        Button btnConsultarValor = new Button("Consultar valor");
+        Button btnRealizarLocacao = new Button("Realizar Locação");
 
         Button btnVoltar = new Button("Voltar");
 
@@ -115,17 +145,17 @@ public class TelaFuncRealizaLocacao extends Application {
 
 
         painel4.add(btnBuscarAutomoveisDisp, 2, 2);
-        painel4.add(btnConsultarValor,2,5);
-        painel4.add(btnVoltar, 0, 8);
+        painel4.add(btnRealizarLocacao,2,6);
+        painel4.add(btnVoltar, 0, 11);
 
         final Text actiontarget = new Text();
-        painel4.add(actiontarget, 1, 10);
+        painel4.add(actiontarget, 1, 12);
         actiontarget.setId("actiontarget");
 
 
 
         final Text listaAutoNaTela = new Text();
-        painel4.add(listaAutoNaTela,1,12);
+        painel4.add(listaAutoNaTela,1,13);
         listaAutoNaTela.setId("listaAutoNaTela");
 
 
@@ -148,9 +178,12 @@ public class TelaFuncRealizaLocacao extends Application {
                 String automoveisDisponiveis = listaAuto.pesquisaAutoDispPorCategoria(categoria);
                 System.out.println(automoveisDisponiveis);
 
-                listaAutoNaTela.setFill(Color.GRAY);
+//                listaAutoNaTela.setFill(Color.GRAY);
+//                String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
+//                actiontarget.setText(str);
+
                 String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
-                actiontarget.setText(str);
+                listaDeAutomoveis.setText(str);
 
 
 
@@ -163,13 +196,15 @@ public class TelaFuncRealizaLocacao extends Application {
 
         });
 
-        btnConsultarValor.setOnAction(e -> {
+        btnRealizarLocacao.setOnAction(e -> {
             try {
+                String cpfcnpj = cpfcnpjTextField.getText();
                 String placaAuto = placaTextField.getText();
                 String dataInicio = dataInicioTextField.getText();
                 String dataFinal = dataFinalTextField.getText();
                 Automovel auto = listaAuto.pesquisaAutomovel(placaAuto);
-                Locacao loc = new Locacao(auto,dataInicio,dataFinal);
+                Cliente cliente = listaCli.pesquisaCliente()
+                Locacao loc = new Locacao()
                 loc.calculaPeriodo();
                 double valorLocacao = loc.getValorLocacao();
                 System.out.println("Valor da locação: " + valorLocacao);
@@ -191,7 +226,7 @@ public class TelaFuncRealizaLocacao extends Application {
 //        });
         Scene scene4 = new Scene(painel4, 900, 750);
 
-        primaryStage.setTitle("Verificar disponibilidade");
+        primaryStage.setTitle("Realizar locação");
         primaryStage.setScene(scene4);
         primaryStage.show();
     }

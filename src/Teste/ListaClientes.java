@@ -22,6 +22,22 @@ public class ListaClientes {
         return retorno;
     }
 
+    public Cliente pesquisaClientePorCpf(String cpf){
+        Cliente umCliente = null;
+        for(int i = 0; i<clientes.size(); i++){
+            if(clientes.get(i) instanceof PessoaFisica){
+                if (((PessoaFisica) clientes.get(i)).getCpf().equals(cpf))
+                    umCliente = clientes.get(i);
+            }
+            if(clientes.get(i) instanceof PessoaJuridica){
+                if(((PessoaJuridica) clientes.get(i)).getCnpj().equals(cpf))
+                    umCliente = clientes.get(i);
+
+            }
+        }
+        return umCliente;
+    }
+
     public boolean insere(Cliente novoCliente) {
         clientes.add(novoCliente);
         total = total + 1;

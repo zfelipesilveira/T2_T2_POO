@@ -22,8 +22,7 @@ public class MenuFunc extends Application {
     private TelaFuncCadastraCliente telaFCC;
     private TelaFuncConsultaDisponibilidade telaFCD;
     private TelaFuncConsultaValorLocacao telaFCVL;
-    //private TelaFuncConsultaValorLocacao
-    //private TelaFuncRealizaLocacao
+    private TelaFuncRealizaLocacao telaFRL;
     //private TelaFuncFinalizaLocacao
 
     //coleções necessárias
@@ -54,6 +53,7 @@ public class MenuFunc extends Application {
         telaFCC = new TelaFuncCadastraCliente(this, listaCli);
         telaFCD = new TelaFuncConsultaDisponibilidade(this,listaCat,listaAuto);
         telaFCVL = new TelaFuncConsultaValorLocacao(this,listaCat,listaAuto);
+        telaFRL = new TelaFuncRealizaLocacao(this, listaCat, listaAuto, listaCli);
 
     }
 
@@ -123,6 +123,14 @@ public class MenuFunc extends Application {
         btnConsultarVLoc.setOnAction(e -> {
             try {
                 telaFCVL.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        btnRealizarLoc.setOnAction(e -> {
+            try {
+                telaFRL.start(thestage);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
