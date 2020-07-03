@@ -45,34 +45,6 @@ public class MenuPrincipal extends Application {
 
     }
 
-    public ListaAutomoveis getListaAuto() {
-        return listaAuto;
-    }
-
-    public ListaCategoria getListaCat() {
-        return listaCat;
-    }
-
-    public ListaModelo getListaModelo() {
-        return listaMod;
-    }
-
-    public ListaLocacoes getListaLoca() {
-        return listaLoc;
-    }
-
-    public ListaClientes getListaCli() {
-        return listaCli;
-    }
-
-    public PilhaPedidos getFilaPedidos() {
-        return pilhaPed;
-    }
-
-    public ListaMarcas getListaMar() {
-        return listaMar;
-    }
-
     @Override
     public void start(Stage primaryStage) {
         // Acesso ao stage (palco) da aplicacao
