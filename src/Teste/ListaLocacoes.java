@@ -47,6 +47,19 @@ public class ListaLocacoes {
         System.out.print(total);
     }
 
+    public String toString(){
+        if (total < 1) System.out.println("Não há locações ");
+        if (total > 0) {
+            String str = " ";
+            str = "Lista de locações: + \n";
+            for (int i = 0; i < locacoes.size(); i++) {
+                str = str + locacoes.get(i).toString() + "\n" + "//////////////////////";
+            }
+            return str;
+        }
+        return "Ocorreu algum erro";
+    }
+
     public void mostra() {
         if (total < 1) System.out.println("Não há locações ");
         if (total > 0) {

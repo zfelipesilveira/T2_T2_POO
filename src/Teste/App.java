@@ -167,13 +167,13 @@ public class App {
 
         Automovel umAutomovel = listaAutomoveis.pesquisaAutomovel(placa);
 
-        Locacao umaLocacao = new Locacao(umCliente, umAutomovel, periodo);
-        if(umAutomovel!=null && umCliente!=null && umaLocacao!=null){
-            if(listaLocacao.insere(umaLocacao)){
-                System.out.println("Locação bem-sucedida. ");
-            }
-        }
-        else System.out.println("Erro ao cadastrar locação. ");
+////        Locacao umaLocacao = new Locacao(umCliente, umAutomovel, periodo);
+////        if(umAutomovel!=null && umCliente!=null && umaLocacao!=null){
+////            if(listaLocacao.insere(umaLocacao)){
+////                System.out.println("Locação bem-sucedida. ");
+////            }
+////        }
+//        else System.out.println("Erro ao cadastrar locação. ");
     }
     private static void finalizaLocacao(ListaLocacoes listaLocacoes, ListaAutomoveis listaAutomoveis){
         Scanner in = new Scanner(System.in);
@@ -375,10 +375,10 @@ public class App {
         Cliente acme = new PessoaJuridica(nomeACME, telefoneACME, cnpjACME);
         listaClientes.insere(acme);
 
-        Locacao locacaoPedro = new Locacao(pedro, carroCompass, 7);
-        listaLocacao.insere(locacaoPedro);
-        Locacao locacaoACME = new Locacao(acme, carroCherokee, 7);
-        listaLocacao.insere(locacaoACME);
+//        Locacao locacaoPedro = new Locacao(pedro, carroCompass, 7);
+//        listaLocacao.insere(locacaoPedro);
+//        Locacao locacaoACME = new Locacao(acme, carroCherokee, 7);
+//        listaLocacao.insere(locacaoACME);
 
         consultaClientes(listaClientes);
 

@@ -31,6 +31,7 @@ public class TelaFuncRealizaLocacao extends Application {
     private ListaCategoria listaCat;
     private ListaAutomoveis listaAuto;
     private ListaClientes listaCli;
+    private ListaLocacoes listaLoca;
     private ToggleGroup rbFisicaJuridica;
     private RadioButton rbFisica, rbJuridica;
     private ComboBox cbCategorias;
@@ -39,12 +40,14 @@ public class TelaFuncRealizaLocacao extends Application {
 
 
 
-    public TelaFuncRealizaLocacao(MenuFunc menuFunc, ListaCategoria lcat, ListaAutomoveis la, ListaClientes lcli) {
+    public TelaFuncRealizaLocacao(MenuFunc menuFunc, ListaCategoria lcat, ListaAutomoveis la, ListaClientes lcli, ListaLocacoes ll) {
         super();
         this.menuFunc = menuFunc;
         this.listaCat = lcat;
         this.listaAuto = la;
         this.listaCli = lcli;
+        this.listaLoca = ll;
+
 
     }
 
@@ -154,9 +157,9 @@ public class TelaFuncRealizaLocacao extends Application {
 
 
 
-        final Text listaAutoNaTela = new Text();
-        painel4.add(listaAutoNaTela,1,13);
-        listaAutoNaTela.setId("listaAutoNaTela");
+        final Text dadosLocacao = new Text();
+        painel4.add(dadosLocacao,2,12);
+        dadosLocacao.setId("listaAutoNaTela");
 
 
 
@@ -198,17 +201,33 @@ public class TelaFuncRealizaLocacao extends Application {
 
         btnRealizarLocacao.setOnAction(e -> {
             try {
-                String cpfcnpj = cpfcnpjTextField.getText();
-                String placaAuto = placaTextField.getText();
-                String dataInicio = dataInicioTextField.getText();
-                String dataFinal = dataFinalTextField.getText();
-                Automovel auto = listaAuto.pesquisaAutomovel(placaAuto);
-                Cliente cliente = listaCli.pesquisaCliente()
-                Locacao loc = new Locacao()
-                loc.calculaPeriodo();
-                double valorLocacao = loc.getValorLocacao();
-                System.out.println("Valor da locação: " + valorLocacao);
+                if(cpfcnpjTextField.getText().isEmpty() || placaTextField.getText().isEmpty() ||
+                        dataInicioTextField.getText().isEmpty() || dataFinalTextField.getText().isEmpty()){
+                    actiontarget.setFill(Color.FIREBRICK);
+                    actiontarget.setText("Preencha todos os campos");
+                }
+                else {
+                    String cpfcnpj = cpfcnpjTextField.getText();
+                    String placaAuto = placaTextField.getText();
+                    String dataInicio = dataInicioTextField.getText();
+                    String dataFinal = dataFinalTextField.getText();
+                    Automovel auto = listaAuto.pesquisaAutomovel(placaAuto);
+                    Cliente cliente = listaCli.pesquisaClientePorCpf(cpfcnpj);
+                    Locacao loc = new Locacao(cliente, auto, dataInicio, dataFinal);
+                    loc.calculaPeriodo();
+                    listaLoca.insere(loc);
+                    actiontarget.setFill(Color.GREEN);
+                    actiontarget.setText("Locação realizada");
 
+                    loc.setValorLocacao();
+                    dadosLocacao.setFill(Color.BLACK);
+                    dadosLocacao.setText(loc.toString());
+
+                    System.out.println(listaLoca);
+
+                    double valorLocacao = loc.getValorLocacao();
+                    System.out.println("Valor da locação: " + valorLocacao);
+                }
 
             } catch (Exception ex) {
                 ex.printStackTrace();

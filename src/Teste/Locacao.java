@@ -13,10 +13,11 @@ public class Locacao {
     private double valor;
 
 
-    public Locacao(Cliente cliente, Automovel automovel, double periodo){
+    public Locacao(Cliente cliente, Automovel automovel, String dataInicio, String dataFinal){
         this.cliente = cliente;
         this.automovel = automovel;
-        this.periodo = periodo;
+        this.dataInicio = dataInicio;
+        this.dataFinal = dataFinal;
     }
 
     public Locacao(Automovel auto, String dataInicio, String dataFinal){
@@ -28,6 +29,10 @@ public class Locacao {
     public double getValorLocacao(){
         valor = (automovel.getModelo().getValorFixo()/1000) + (automovel.getValorDiaria() * periodo);
         return valor;
+    }
+
+    public void setValorLocacao(){
+        valor = (automovel.getModelo().getValorFixo()/1000) + (automovel.getValorDiaria() * periodo);
     }
 
     public void calculaPeriodo(){

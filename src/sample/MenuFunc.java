@@ -53,7 +53,7 @@ public class MenuFunc extends Application {
         telaFCC = new TelaFuncCadastraCliente(this, listaCli);
         telaFCD = new TelaFuncConsultaDisponibilidade(this,listaCat,listaAuto);
         telaFCVL = new TelaFuncConsultaValorLocacao(this,listaCat,listaAuto);
-        telaFRL = new TelaFuncRealizaLocacao(this, listaCat, listaAuto, listaCli);
+        telaFRL = new TelaFuncRealizaLocacao(this, listaCat, listaAuto, listaCli, listaLoc);
 
     }
 
