@@ -117,6 +117,10 @@ public class TelaFuncFinalizaLocacao extends Application {
                     actiontarget.setFill(Color.FIREBRICK);
                     actiontarget.setText("Digite uma placa");
                 }
+                if(listaLoca.pesquisaLocacoes(placaTextField.getText()) == null){
+                    actiontarget.setFill(Color.FIREBRICK);
+                    actiontarget.setText("Nenhuma locação para esse veículo");
+                }
                 else {
                     String placaAuto = placaTextField.getText();
                     Locacao loc = listaLoca.pesquisaLocacoes(placaAuto);

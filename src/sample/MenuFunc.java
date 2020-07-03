@@ -86,6 +86,8 @@ public class MenuFunc extends Application {
         Button btnFinalizarLoc = new Button("Finalizar locação");
         Button btnMenuPrincipal = new Button("Voltar para o menu principal");
 
+        btnMenuPrincipal.setStyle("-fx-text-fill: #b22222");
+
 
         painel2.add(btnCadCli, 0, 3, 2, 1);
         painel2.add(btnConsultarDispAuto, 0, 4);

@@ -97,6 +97,8 @@ public class MenuGerente extends Application {
 
         Button btnVoltar = new Button("Voltar para o menu principal");
 
+        btnVoltar.setStyle("-fx-text-fill: #b22222");
+
 
         painel2.add(btnCarregarDados, 0, 3, 2, 1);
         painel2.add(btnCadCat, 0, 4);

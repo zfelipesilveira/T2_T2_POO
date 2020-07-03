@@ -70,6 +70,9 @@ public class MenuPrincipal extends Application {
         Button btncarregarDados = new Button("Carregar dados");
         Button btnFinal = new Button("Terminar");
 
+
+        btnFinal.setStyle("-fx-text-fill: #b22222");
+
         painel1.add(btnFunc, 0, 3, 2, 1);
         painel1.add(btnGerente, 0, 4);
         painel1.add(btncarregarDados, 0, 5);

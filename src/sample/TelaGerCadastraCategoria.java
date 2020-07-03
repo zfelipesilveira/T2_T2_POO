@@ -69,13 +69,16 @@ public class TelaGerCadastraCategoria extends Application {
 
         Button btnCadastrarCategoria = new Button("Cadastrar");
         Button btnVoltar = new Button("Voltar");
+        Button btnSalvar = new Button("Salvar categorias");
 
 
 
 
 
-        painel4.add(btnCadastrarCategoria, 1, 6);
+        painel4.add(btnCadastrarCategoria, 1, 3);
+        painel4.add(btnSalvar,1,6);
         painel4.add(btnVoltar, 0, 8);
+
 
         final Text actiontarget = new Text();
         painel4.add(actiontarget, 1, 10);
