@@ -49,37 +49,37 @@ public class TelaGerRemoveAutomovel extends Application {
         painel4.setPadding(new Insets(25, 25, 25, 25));
         painel4.setGridLinesVisible(false);
 
-        Text scenetitle = new Text("Cadastrar categoria de carro");
+        Text scenetitle = new Text("Remover automóvel");
         scenetitle.setId("welcome-text");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         painel4.add(scenetitle, 0, 0, 2, 1);
 
         // create labels
 
-        Label nomeMarca = new Label("Digite o nome da marca");
-        painel4.add(nomeMarca, 0, 1);
+        Label placaAutomovel = new Label("Digite a placa do automóvel que deseja remover");
+        painel4.add(placaAutomovel, 0, 1);
 
-        TextField nomeMarcaTextField = new TextField();
-        painel4.add(nomeMarcaTextField, 1, 1);
+        TextField placaTextField = new TextField();
+        painel4.add(placaTextField, 0, 2);
 
 
 
 
         Button btnRemoverAutomovel = new Button("Remover");
         Button btnVoltar = new Button("Voltar");
-        Button btnSalvar = new Button("Salvar marcas");
+        Button btnSalvar = new Button("Salvar automóveis");
+
+        btnVoltar.setStyle("-fx-text-fill: #b22222");
 
 
 
-
-
-        painel4.add(btnRemoverAutomovel, 1, 3);
-        painel4.add(btnSalvar,1,6);
-        painel4.add(btnVoltar, 0, 8);
+        painel4.add(btnRemoverAutomovel, 0, 3);
+        painel4.add(btnSalvar,1,5);
+        painel4.add(btnVoltar, 0, 6);
 
 
         final Text actiontarget = new Text();
-        painel4.add(actiontarget, 1, 10);
+        painel4.add(actiontarget, 1, 7);
         actiontarget.setId("actiontarget");
 
 
