@@ -26,8 +26,6 @@ import java.util.Scanner;
 public class TelaGerCadastraCategoria extends Application {
 
     private MenuGerente menuGer;
-    private Cliente cliente;
-    private ListaClientes lista = new ListaClientes(100);
     private ListaCategoria listaCat;
 
 

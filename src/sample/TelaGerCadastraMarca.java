@@ -28,16 +28,14 @@ public class TelaGerCadastraMarca extends Application {
     private MenuGerente menuGer;
     private Cliente cliente;
     private ListaClientes lista = new ListaClientes(100);
-    private ToggleGroup rbFisicaJuridica;
-    private RadioButton rbFisica, rbJuridica;
+    private ListaCategoria listaCat;
 
 
 
-
-
-    public TelaGerCadastraMarca(MenuGerente menuGer) {
+    public TelaGerCadastraMarca(MenuGerente menuGer, ListaCategoria lcat) {
         super();
         this.menuGer = menuGer;
+        this.listaCat = lcat;
     }
 
     @Override
@@ -71,13 +69,16 @@ public class TelaGerCadastraMarca extends Application {
 
         Button btnCadastrarCategoria = new Button("Cadastrar");
         Button btnVoltar = new Button("Voltar");
+        Button btnSalvar = new Button("Salvar categorias");
 
 
 
 
 
-        painel4.add(btnCadastrarCategoria, 1, 6);
+        painel4.add(btnCadastrarCategoria, 1, 3);
+        painel4.add(btnSalvar,1,6);
         painel4.add(btnVoltar, 0, 8);
+
 
         final Text actiontarget = new Text();
         painel4.add(actiontarget, 1, 10);
@@ -96,9 +97,9 @@ public class TelaGerCadastraMarca extends Application {
 
         btnCadastrarCategoria.setOnAction(e -> {
             CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
-
+            listaCat.insere(cat);
             actiontarget.setFill(Color.GREEN);
-            actiontarget.setText("Categoria cadastrada carregados!");
+            actiontarget.setText("Categoria cadastrada!");
 
 
         });
