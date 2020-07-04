@@ -79,7 +79,7 @@ public class TelaGerRemoveAutomovel extends Application {
 
 
         final Text actiontarget = new Text();
-        painel4.add(actiontarget, 1, 7);
+        painel4.add(actiontarget, 1, 3);
         actiontarget.setId("actiontarget");
 
 
@@ -93,11 +93,23 @@ public class TelaGerRemoveAutomovel extends Application {
             }
         });
 
-        btnCadastrarCategoria.setOnAction(e -> {
-            MarcaAutomovel cat = new MarcaAutomovel(nomeMarcaTextField.getText());
-            listaMar.insere(cat);
-            actiontarget.setFill(Color.GREEN);
-            actiontarget.setText("Categoria cadastrada!");
+        btnRemoverAutomovel.setOnAction(e -> {
+            try {
+                Automovel auto = listaAuto.pesquisaAutomovel(placaTextField.getText());
+                if(auto == null){
+                    actiontarget.setFill(Color.FIREBRICK);
+                    actiontarget.setText("Automóvel não encontrado");
+
+                }
+                else{
+                    listaAuto.remove(placaTextField.getText());
+                    actiontarget.setFill(Color.GREEN);
+                    actiontarget.setText("Automóvel removido");
+
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
 
 
         });
