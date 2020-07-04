@@ -89,6 +89,10 @@ public class EscritaArquivos {
         }
     }
 
+    public void gravaRegistrosModelos(ModeloAutomovel[] lista){
+
+    }
+
 
 
 
