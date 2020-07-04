@@ -94,11 +94,11 @@ public class EscritaArquivos {
         try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
             for (ModeloAutomovel mod : lista) {
                 if(mod instanceof ModeloNacional) {
-                    writer.format("%s;%s;%s;%d;%d%n", mod.getNome(), mod.getCategoria().getNome(), mod.getMarca().getNome(),
+                    writer.format("%s;%s;%s;%f;%f%n", mod.getNome(), mod.getCategoria().getNome(), mod.getMarca().getNome(),
                             ((ModeloNacional) mod).getValor(), ((ModeloNacional) mod).getIpi());
                 }
                 if(mod instanceof ModeloImportado) {
-                    writer.format("%s;%s;%s;%d;%d%n", mod.getNome(), mod.getCategoria().getNome(), mod.getMarca().getNome(),
+                    writer.format("%s;%s;%s;%f;%f%n", mod.getNome(), mod.getCategoria().getNome(), mod.getMarca().getNome(),
                             ((ModeloImportado) mod).getValor(), ((ModeloImportado) mod).getTaxa());
                 }
 

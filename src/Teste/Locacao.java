@@ -11,6 +11,7 @@ public class Locacao {
     private String dataFinal;
     private double periodo;
     private double valor;
+    private String tipoCliente;
 
 
     public Locacao(Cliente cliente, Automovel automovel, String dataInicio, String dataFinal){
@@ -26,9 +27,22 @@ public class Locacao {
         this.dataFinal = dataFinal;
     }
 
+    public Locacao(Automovel auto, String dataInicio, String dataFinal, String tipoCliente){
+        this.automovel = auto;
+        this.dataInicio = dataInicio;
+        this.dataFinal = dataFinal;
+        this.tipoCliente = tipoCliente;
+    }
+
     public double getValorLocacao(){
-        valor = (automovel.getModelo().getValorFixo()/1000) + (automovel.getValorDiaria() * periodo);
-        return valor;
+        if(tipoCliente.equalsIgnoreCase("J")){
+            valor = (automovel.getModelo().getValorFixo()/1000) + ((automovel.getValorDiaria()*0.95) * periodo);
+            return valor;
+        }
+        else{
+            valor = (automovel.getModelo().getValorFixo()/1000) + (automovel.getValorDiaria() * periodo);
+            return valor;
+        }
     }
 
     public void setValorLocacao(){

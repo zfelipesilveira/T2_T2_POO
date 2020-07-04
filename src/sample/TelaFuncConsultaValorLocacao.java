@@ -104,6 +104,15 @@ public class TelaFuncConsultaValorLocacao extends Application {
         painel4.add(listaDeAutomoveis,1,8);
         listaDeAutomoveis.setId("listaDeAutomoveis");
 
+        rbFisicaJuridica = new ToggleGroup();
+        rbFisica = new RadioButton("Pessoa Física");
+        rbFisica.setToggleGroup(rbFisicaJuridica);
+        rbJuridica = new RadioButton("Pessoa Jurídica");
+        rbJuridica.setToggleGroup(rbFisicaJuridica);
+        rbJuridica.setSelected(true);
+        painel4.add(rbFisica,0,6);
+        painel4.add(rbJuridica,1,6);
+
 
 
 
@@ -175,7 +184,10 @@ public class TelaFuncConsultaValorLocacao extends Application {
                 String dataInicio = dataInicioTextField.getText();
                 String dataFinal = dataFinalTextField.getText();
                 Automovel auto = listaAuto.pesquisaAutomovel(placaAuto);
-                Locacao loc = new Locacao(auto,dataInicio,dataFinal);
+                String tipoCliente = "";
+                if(rbFisica.isSelected()) tipoCliente = "F";
+                if(rbJuridica.isSelected()) tipoCliente = "J";
+                Locacao loc = new Locacao(auto,dataInicio,dataFinal,tipoCliente);
                 loc.calculaPeriodo();
                 double valorLocacao = loc.getValorLocacao();
                 actiontarget.setFill(Color.BLACK);
