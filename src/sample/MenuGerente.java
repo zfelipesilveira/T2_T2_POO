@@ -26,7 +26,7 @@ public class MenuGerente extends Application {
     private TelaGerCadastraMarca telaGerCadastraMarca;
     private TelaGerCadastraModelo telaGerCadastraModelo;
     private TelaGerCadastraAutomovel telaGerCadastraAutomovel;
-    // private TelaGerRemoveAutomovel telaGerRemoveAutomovel
+    private TelaGerRemoveAutomovel telaGerRemoveAutomovel;
     // private TelaGerConsultaLocacoes telaGerConsultaLocacoes
     // private TelaGerConsultaClientes telaGerConsultaClientes
     // private TelaGerConsultaAutomoveis telaGerConsultaAutomoveis
@@ -62,6 +62,7 @@ public class MenuGerente extends Application {
         telaGerCadastraMarca = new TelaGerCadastraMarca(this, listaMar);
         telaGerCadastraModelo = new TelaGerCadastraModelo(this,listaMod,listaCat,listaMar);
         telaGerCadastraAutomovel = new TelaGerCadastraAutomovel(this,listaMod,listaAuto);
+        telaGerRemoveAutomovel = new TelaGerRemoveAutomovel(this,listaAuto);
 
 
     }
@@ -161,6 +162,14 @@ public class MenuGerente extends Application {
         btnCadAuto.setOnAction(e -> {
             try {
                 telaGerCadastraAutomovel.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        btnRemoverAutomovel.setOnAction(e -> {
+            try {
+                telaGerRemoveAutomovel.start(thestage);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }

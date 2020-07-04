@@ -23,17 +23,17 @@ import java.util.Scanner;
 	Exemplo de aplicacao grafica com multiplas janelas
  */
 
-public class TelaGerCadastraMarca extends Application {
+public class TelaGerRemoveAutomovel extends Application {
 
     private MenuGerente menuGer;
-    private ListaMarcas listaMar;
+    private ListaAutomoveis listaAuto;
 
 
 
-    public TelaGerCadastraMarca(MenuGerente menuGer, ListaMarcas lmar) {
+    public TelaGerRemoveAutomovel(MenuGerente menuGer, ListaAutomoveis la) {
         super();
         this.menuGer = menuGer;
-        this.listaMar = lmar;
+        this.listaAuto = la;
     }
 
     @Override
@@ -65,17 +65,15 @@ public class TelaGerCadastraMarca extends Application {
 
 
 
-        Button btnCadastrarCategoria = new Button("Cadastrar");
+        Button btnRemoverAutomovel = new Button("Remover");
         Button btnVoltar = new Button("Voltar");
         Button btnSalvar = new Button("Salvar marcas");
 
-        btnVoltar.setStyle("-fx-text-fill: #b22222");
 
 
 
 
-
-        painel4.add(btnCadastrarCategoria, 1, 3);
+        painel4.add(btnRemoverAutomovel, 1, 3);
         painel4.add(btnSalvar,1,6);
         painel4.add(btnVoltar, 0, 8);
 
@@ -123,7 +121,7 @@ public class TelaGerCadastraMarca extends Application {
 //        });
         Scene scene4 = new Scene(painel4, 500, 400);
 
-        primaryStage.setTitle("Cadastrar categoria");
+        primaryStage.setTitle("Remover automóvel");
         primaryStage.setScene(scene4);
         primaryStage.show();
     }
