@@ -51,6 +51,8 @@ public class EscritaArquivos {
 
 
 
+
+
     public static void main(String args[]) {
         EscritaArquivos exemplo = new EscritaArquivos();
         Cliente c1 = new PessoaFisica("Marcelo","3912039", "84632981");
