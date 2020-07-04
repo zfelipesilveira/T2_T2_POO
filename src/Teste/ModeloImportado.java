@@ -35,8 +35,10 @@ public class ModeloImportado extends ModeloAutomovel {
     }
 
     public double getValorFixo(){
+        double taxaImportacao25 = ((getValor() * taxa)/100) * 0.25;
         double valorFixo = getValor() + ((getValor() * taxa)/100);
-        return valorFixo;
+        double valorFixoFinal = getValor() + taxaImportacao25;
+        return valorFixoFinal;
     }
 
     public String toString(){

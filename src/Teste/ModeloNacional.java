@@ -35,8 +35,10 @@ public class ModeloNacional extends ModeloAutomovel{
     }
 
     public double getValorFixo(){
+        double ipi10 = ((getValor() * ipi)/100) * 0.10;
         valorFixo = getValor() + ((getValor() * ipi)/100);
-        return valorFixo;
+        double valorFixoFinal = getValor() + ipi10;
+        return valorFixoFinal;
     }
 
     public String toString(){
