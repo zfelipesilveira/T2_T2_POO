@@ -61,7 +61,7 @@ public class MenuGerente extends Application {
         telaGerCadastraCategoria = new TelaGerCadastraCategoria(this,listaCat);
         telaGerCadastraMarca = new TelaGerCadastraMarca(this, listaMar);
         telaGerCadastraModelo = new TelaGerCadastraModelo(this,listaMod,listaCat,listaMar);
-        telaGerCadastraAutomovel = new TelaGerCadastraAutomovel(this,listaMod);
+        telaGerCadastraAutomovel = new TelaGerCadastraAutomovel(this,listaMod,listaAuto);
 
 
     }

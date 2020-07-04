@@ -158,52 +158,54 @@ public class TelaGerCadastraModelo extends Application {
         });
 
         btnCadastrarModelo.setOnAction(e -> {
-            CategoriaAutomovel cat = listaCat.pesquisaCategoria(nomeCategoriaTextField.getText());
-            MarcaAutomovel mar = listaMar.pesquisaMarca(nomeMarcaTextField.getText());
-            if(cat == null && mar != null){
-                actiontarget.setFill(Color.FIREBRICK);
-                actiontarget.setText("Categoria não encontrada");
-            }
-            if(mar == null && cat != null){
-                actiontarget.setFill(Color.FIREBRICK);
-                actiontarget.setText("Marca não encontrada");
-            }
-            if(mar == null && cat == null){
-                actiontarget.setFill(Color.FIREBRICK);
-                actiontarget.setText("Categoria e marca não encontradas");
-            }
-            if(mar != null && cat != null && valorModeloTextField.getText().matches("[0-9]+") && taxaModeloTextField.getText().matches("[0-9]+")){
-                if(rbNacional.isSelected()){
-                    String nomeMod = nomeModeloTextField.getText();
-                    double valor = Double.parseDouble(valorModeloTextField.getText());
-                    double taxaipi = Double.parseDouble(taxaModeloTextField.getText());
-
-                    ModeloAutomovel mod = new ModeloNacional(nomeMod,mar,cat,valor,taxaipi);
-                    listaMod.insere(mod);
-
-                    actiontarget.setFill(Color.GREEN);
-                    actiontarget.setText("Modelo cadastrado");
+            try {
+                CategoriaAutomovel cat = listaCat.pesquisaCategoria(nomeCategoriaTextField.getText());
+                MarcaAutomovel mar = listaMar.pesquisaMarca(nomeMarcaTextField.getText());
+                if (cat == null && mar != null) {
+                    actiontarget.setFill(Color.FIREBRICK);
+                    actiontarget.setText("Categoria não encontrada");
                 }
-                if(rbImportado.isSelected()){
-                    String nomeMod = nomeModeloTextField.getText();
-                    double valor = Double.parseDouble(valorModeloTextField.getText());
-                    double taxaipi = Double.parseDouble(taxaModeloTextField.getText());
+                if (mar == null && cat != null) {
+                    actiontarget.setFill(Color.FIREBRICK);
+                    actiontarget.setText("Marca não encontrada");
+                }
+                if (mar == null && cat == null) {
+                    actiontarget.setFill(Color.FIREBRICK);
+                    actiontarget.setText("Categoria e marca não encontradas");
+                }
+                if (mar != null && cat != null && valorModeloTextField.getText().matches("[0-9]+") && taxaModeloTextField.getText().matches("[0-9]+")) {
+                    if (rbNacional.isSelected()) {
+                        String nomeMod = nomeModeloTextField.getText();
+                        double valor = Double.parseDouble(valorModeloTextField.getText());
+                        double taxaipi = Double.parseDouble(taxaModeloTextField.getText());
 
-                    ModeloAutomovel mod = new ModeloImportado(nomeMod,mar,cat,valor,taxaipi);
-                    listaMod.insere(mod);
+                        ModeloAutomovel mod = new ModeloNacional(nomeMod, mar, cat, valor, taxaipi);
+                        listaMod.insere(mod);
 
-                    actiontarget.setFill(Color.GREEN);
-                    actiontarget.setText("Modelo cadastrado");
+                        actiontarget.setFill(Color.GREEN);
+                        actiontarget.setText("Modelo cadastrado");
+                    }
+                    if (rbImportado.isSelected()) {
+                        String nomeMod = nomeModeloTextField.getText();
+                        double valor = Double.parseDouble(valorModeloTextField.getText());
+                        double taxaipi = Double.parseDouble(taxaModeloTextField.getText());
+
+                        ModeloAutomovel mod = new ModeloImportado(nomeMod, mar, cat, valor, taxaipi);
+                        listaMod.insere(mod);
+
+                        actiontarget.setFill(Color.GREEN);
+                        actiontarget.setText("Modelo cadastrado");
+
+                    }
+
+                } else {
+                    actiontarget.setFill(Color.FIREBRICK);
+                    actiontarget.setText("Erro no preenchimento dos campos");
 
                 }
-
+            }catch (NullPointerException en) {
+                en.printStackTrace();
             }
-            else {
-                actiontarget.setFill(Color.FIREBRICK);
-                actiontarget.setText("Erro no preenchimento dos campos");
-
-            }
-
         });
 
 //        btnCadastrar.setOnAction(e -> {

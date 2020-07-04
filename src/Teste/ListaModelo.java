@@ -12,7 +12,6 @@ public class ListaModelo{
         modelos = new ArrayList<ModeloAutomovel>(qtdMax);
     }
 
-    // Método aparentemente não-funcional que dificultou nosso trabalho.
 
     public ModeloAutomovel pesquisaModelo(String nome){
         ModeloAutomovel umModelo = null;
