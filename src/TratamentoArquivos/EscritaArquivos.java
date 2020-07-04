@@ -80,7 +80,7 @@ public class EscritaArquivos {
         Path path1 = Paths.get("marcas.txt");
         try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
             for (MarcaAutomovel mar : lista) {
-                if(mar instanceof MarcaAutomovel) writer.format("%s",mar.getNome());
+                if(mar instanceof MarcaAutomovel) writer.format("%s%n",mar.getNome());
                 //writer.format("%s",mar.getNome());
             }
         }
@@ -90,6 +90,23 @@ public class EscritaArquivos {
     }
 
     public void gravaRegistrosModelos(ModeloAutomovel[] lista){
+        Path path1 = Paths.get("marcas.txt");
+        try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
+            for (ModeloAutomovel mod : lista) {
+                if(mod instanceof ModeloNacional) {
+                    writer.format("%s;%s;%s;%d;%d%n", mod.getNome(), mod.getCategoria().getNome(), mod.getMarca().getNome(),
+                            ((ModeloNacional) mod).getValor(), ((ModeloNacional) mod).getIpi());
+                }
+                if(mod instanceof ModeloImportado) {
+                    writer.format("%s;%s;%s;%d;%d%n", mod.getNome(), mod.getCategoria().getNome(), mod.getMarca().getNome(),
+                            ((ModeloImportado) mod).getValor(), ((ModeloImportado) mod).getTaxa());
+                }
+
+            }
+        }
+        catch (IOException e) {
+            System.err.format("Erro de E/S: %s%n", e);
+        }
 
     }
 

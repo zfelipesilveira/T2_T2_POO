@@ -12,6 +12,10 @@ public class ListaModelo{
         modelos = new ArrayList<ModeloAutomovel>(qtdMax);
     }
 
+    public ArrayList<ModeloAutomovel> getModelos(){
+        return modelos;
+    }
+
 
     public ModeloAutomovel pesquisaModelo(String nome){
         ModeloAutomovel umModelo = null;
