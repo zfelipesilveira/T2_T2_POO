@@ -1,8 +1,6 @@
 package TratamentoArquivos;
 
-import Teste.Cliente;
-import Teste.PessoaFisica;
-import Teste.PessoaJuridica;
+import Teste.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -45,6 +43,42 @@ public class EscritaArquivos {
 
             }
         } catch (IOException e) {
+            System.err.format("Erro de E/S: %s%n", e);
+        }
+    }
+
+//    public void gravaRegistrosTexto() {
+//        Path path1 = Paths.get("teste2.txt");
+//        try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
+//            for (Pessoa p : lista) {
+//                writer.format("%s;%d;%s%n",p.getNome(),p.getIdade(),p.getEnd());
+//            }
+//        }
+//        catch (IOException e) {
+//            System.err.format("Erro de E/S: %s%n", e);
+//        }
+//    }
+
+    public void gravaRegistrosCategorias(CategoriaAutomovel[] lista){
+        Path path1 = Paths.get("categorias.txt");
+        try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
+            for (CategoriaAutomovel cat : lista) {
+                writer.format("%s",cat.getNome());
+            }
+        }
+        catch (IOException e) {
+            System.err.format("Erro de E/S: %s%n", e);
+        }
+    }
+
+    public void gravaRegistrosMarcas(MarcaAutomovel[] lista){
+        Path path1 = Paths.get("marcas.txt");
+        try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
+            for (MarcaAutomovel mar : lista) {
+                writer.format("%s",mar.getNome());
+            }
+        }
+        catch (IOException e) {
             System.err.format("Erro de E/S: %s%n", e);
         }
     }
