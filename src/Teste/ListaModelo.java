@@ -63,7 +63,7 @@ public class ListaModelo{
         if (total < 1) return "Não há modelos cadastrados";
         if (total > 0) {
             String str = " ";
-            str = "Lista de modelos:" + "\n";
+            str = "";
             for (int i = 0; i < modelos.size(); i++) {
                 str = str + modelos.get(i).toString() + "\n";
             }

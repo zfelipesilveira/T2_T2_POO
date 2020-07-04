@@ -95,11 +95,12 @@ public class LeituraArquivoTextoTeste {
                                     lcat.pesquisaCategoria(nomeCat),valorMod,ipiTaxa);
                             lmod.insere(modi);
                         }
-                        else {
-                            ModeloImportado modi = new ModeloImportado(nomeMod, lmar.pesquisaMarca(nomeMar),
-                                    lcat.pesquisaCategoria(nomeCat), valorMod, ipiTaxa);
-                            lmod.insere(modi);
-                        }
+//                        else {
+//                            ModeloImportado modi = new ModeloImportado(nomeMod, lmar.pesquisaMarca(nomeMar),
+//                                    lcat.pesquisaCategoria(nomeCat), valorMod, ipiTaxa);
+//                            lmod.insere(modi);
+//                        }
+                        System.out.println(lmod);
 
                         System.out.println("Cadastrando modelos...");
 

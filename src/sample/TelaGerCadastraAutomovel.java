@@ -72,10 +72,10 @@ public class TelaGerCadastraAutomovel extends Application {
         TextField anoAutomovelTextField = new TextField();
         painel4.add(anoAutomovelTextField, 1, 1);
 
-        Label nomeCategoria = new Label("Digite o valor da diária do automóvel");
-        painel4.add(nomeCategoria, 0, 3);
-        TextField nomeCategoriaTextField = new TextField();
-        painel4.add(nomeCategoriaTextField, 1, 3);
+        Label valorDiaria = new Label("Digite o valor da diária do automóvel");
+        painel4.add(valorDiaria, 0, 3);
+        TextField valorDiariaTextField = new TextField();
+        painel4.add(valorDiariaTextField, 1, 3);
 
         Label nomeModelo = new Label("Digite o nome do modelo");
         painel4.add(nomeModelo, 0, 4);
@@ -130,6 +130,27 @@ public class TelaGerCadastraAutomovel extends Application {
 
         btnCadastrarAutomovel.setOnAction(e -> {
             try {
+                String placa = placaAutomovelTextField.getText();
+                ModeloAutomovel umModelo = listaMod.pesquisaModelo(nomeModeloTextField.getText());
+
+                if(umModelo == null){
+                    actiontarget.setFill(Color.FIREBRICK);
+                    actiontarget.setText("Modelo não encontrado");
+                }
+                if(umModelo != null && anoAutomovelTextField.getText().matches("[0-9]+") && valorDiariaTextField.getText().matches("[0-9]+")){
+                    int ano = Integer.parseInt(anoAutomovelTextField.getText());
+                    double vlrDiaria = Double.parseDouble(valorDiariaTextField.getText());
+                    Automovel auto = new Automovel(placa,ano,vlrDiaria,umModelo,true);
+                    listaAuto.insere(auto);
+                    actiontarget.setFill(Color.GREEN);
+                    actiontarget.setText("Automóvel cadastrado");
+                }
+                else{
+                    actiontarget.setFill(Color.FIREBRICK);
+                    actiontarget.setText("Erro no preeenchimento dos campos");
+                }
+
+                //matches("[0-9]+")
 
 
             } catch (Exception ex) {

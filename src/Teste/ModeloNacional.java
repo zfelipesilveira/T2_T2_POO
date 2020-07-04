@@ -40,7 +40,7 @@ public class ModeloNacional extends ModeloAutomovel{
     }
 
     public String toString(){
-        return "Modelo: " + getNome() + " - " + "Marca: " + getMarca() + " - " + "Categoria: " + getCategoria()
+        return "Modelo: " + getNome() + " - " + "Marca: " + getMarca().getNome() + " - " + "Categoria: " + getCategoria().getNome()
                 + " - " + "IPI: " + getIpi() + " - " + "Valor: " + getValor();
     }
 
