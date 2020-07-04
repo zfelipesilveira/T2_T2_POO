@@ -55,7 +55,7 @@ public class TelaGerCadastraModelo extends Application {
         painel4.setPadding(new Insets(25, 25, 25, 25));
         painel4.setGridLinesVisible(false);
 
-        Text scenetitle = new Text("Cadastrar categoria de carro");
+        Text scenetitle = new Text("Cadastrar modelo de carro");
         scenetitle.setId("welcome-text");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         painel4.add(scenetitle, 0, 0, 2, 1);
@@ -68,11 +68,27 @@ public class TelaGerCadastraModelo extends Application {
         painel4.add(nomeModeloTextField, 1, 1);
 
         Label nomeMarca = new Label("Digite o nome da marca do modelo");
-        painel4.add(nomeMarca, 0, 1);
+        painel4.add(nomeMarca, 0, 2);
         TextField nomeMarcaTextField = new TextField();
-        painel4.add(nomeMarcaTextField, 1, 1);
+        painel4.add(nomeMarcaTextField, 1, 2);
+
+        Label nomeCategoria = new Label("Digite o nome da categoria do modelo");
+        painel4.add(nomeCategoria, 0, 3);
+        TextField nomeCategoriaTextField = new TextField();
+        painel4.add(nomeCategoriaTextField, 1, 3);
+
+
 
         Label selecionaNacionalOuImportado = new Label("Selecione o tipo do modelo");
+        painel4.add(selecionaNacionalOuImportado,0,4);
+        rbNacionalImportado = new ToggleGroup();
+        rbNacional = new RadioButton("Nacional");
+        rbNacional.setToggleGroup(rbNacionalImportado);
+        rbImportado = new RadioButton("Importado");
+        rbImportado.setToggleGroup(rbNacionalImportado);
+        rbImportado.setSelected(true);
+        painel4.add(rbNacional,0,5);
+        painel4.add(rbImportado,1,5);
 
 
         Label labelListaDeCategorias = new Label("Lista de categorias cadastradas");
@@ -104,9 +120,9 @@ public class TelaGerCadastraModelo extends Application {
 
 
 
-        painel4.add(btnCadastrarModelo, 1, 3);
-        painel4.add(btnSalvar,1,6);
-        painel4.add(btnVoltar, 0, 8);
+        painel4.add(btnCadastrarModelo, 1, 6);
+        painel4.add(btnSalvar,1,7);
+        painel4.add(btnVoltar, 0, 10);
 
 
         final Text actiontarget = new Text();
@@ -150,9 +166,9 @@ public class TelaGerCadastraModelo extends Application {
 //        btnFinal.setOnAction(e -> {
 //            thestage.close();
 //        });
-        Scene scene4 = new Scene(painel4, 500, 400);
+        Scene scene4 = new Scene(painel4, 700, 525);
 
-        primaryStage.setTitle("Cadastrar categoria");
+        primaryStage.setTitle("Cadastrar modelo de carro");
         primaryStage.setScene(scene4);
         primaryStage.show();
     }

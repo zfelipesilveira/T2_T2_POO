@@ -80,6 +80,19 @@ public class ListaCategoria {
         System.out.print(total);
     }
 
+    public String toString(){
+        if (total < 1) return "Não há categorias cadastradas";
+        if (total > 0) {
+            String str = " ";
+            str = "";
+            for (int i = 0; i < categorias.size(); i++) {
+                str = str + categorias.get(i).toString() + "\n";
+            }
+            return str;
+        }
+        return "Não há categorias cadastradas";
+    }
+
     public void mostra() {
         if (total < 1) System.out.println("Não há categorias cadastradas");
         if (total > 0) {

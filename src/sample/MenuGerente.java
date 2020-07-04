@@ -149,6 +149,14 @@ public class MenuGerente extends Application {
             }
         });
 
+        btnCadMod.setOnAction(e -> {
+            try {
+                telaGerCadastraModelo.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
 //        btnCadCli.setOnAction(e -> {
 //            try {
 //

@@ -60,6 +60,19 @@ public class ListaModelo{
         System.out.print(total);
     }
 
+    public String toString(){
+        if (total < 1) return "Não há modelos cadastrados";
+        if (total > 0) {
+            String str = " ";
+            str = "Lista de modelos:" + "\n";
+            for (int i = 0; i < modelos.size(); i++) {
+                str = str + modelos.get(i).toString() + "\n";
+            }
+            return str;
+        }
+        return "Não há modelos cadastrados";
+    }
+
     public void mostra() {
         if (total < 1) System.out.println("Não há modelos cadastrados");
         if (total > 0) {

@@ -48,6 +48,19 @@ public class ListaMarcas{
         System.out.print(total);
     }
 
+    public String toString(){
+        if (total < 1) return "Não há marcas cadastradas";
+        if (total > 0) {
+            String str = " ";
+            str = "";
+            for (int i = 0; i < marcas.size(); i++) {
+                str = str + marcas.get(i).toString() + "\n" ;
+            }
+            return str;
+        }
+        return "Não há marcas cadastradas";
+    }
+
     public void mostra() {
         if (total < 1) System.out.println("Não há marcas cadastradas");
         if (total > 0) {
