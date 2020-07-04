@@ -26,16 +26,14 @@ import java.util.Scanner;
 public class TelaGerCadastraMarca extends Application {
 
     private MenuGerente menuGer;
-    private Cliente cliente;
-    private ListaClientes lista = new ListaClientes(100);
-    private ListaCategoria listaCat;
+    private ListaMarcas listaMar;
 
 
 
-    public TelaGerCadastraMarca(MenuGerente menuGer, ListaCategoria lcat) {
+    public TelaGerCadastraMarca(MenuGerente menuGer, ListaMarcas lmar) {
         super();
         this.menuGer = menuGer;
-        this.listaCat = lcat;
+        this.listaMar = lmar;
     }
 
     @Override
@@ -58,18 +56,18 @@ public class TelaGerCadastraMarca extends Application {
 
         // create labels
 
-        Label nomeCategoria = new Label("Digite o nome da categoria");
-        painel4.add(nomeCategoria, 0, 1);
+        Label nomeMarca = new Label("Digite o nome da marca");
+        painel4.add(nomeMarca, 0, 1);
 
-        TextField nomeCategoriaTextField = new TextField();
-        painel4.add(nomeCategoriaTextField, 1, 1);
+        TextField nomeMarcaTextField = new TextField();
+        painel4.add(nomeMarcaTextField, 1, 1);
 
 
 
 
         Button btnCadastrarCategoria = new Button("Cadastrar");
         Button btnVoltar = new Button("Voltar");
-        Button btnSalvar = new Button("Salvar categorias");
+        Button btnSalvar = new Button("Salvar marcas");
 
 
 
@@ -96,8 +94,8 @@ public class TelaGerCadastraMarca extends Application {
         });
 
         btnCadastrarCategoria.setOnAction(e -> {
-            CategoriaAutomovel cat = new CategoriaAutomovel(nomeCategoriaTextField.getText());
-            listaCat.insere(cat);
+            MarcaAutomovel cat = new MarcaAutomovel(nomeMarcaTextField.getText());
+            listaMar.insere(cat);
             actiontarget.setFill(Color.GREEN);
             actiontarget.setText("Categoria cadastrada!");
 
