@@ -23,7 +23,7 @@ import java.util.Scanner;
 	Exemplo de aplicacao grafica com multiplas janelas
  */
 
-public class TelaGerCadastraModelo extends Application {
+public class TelaGerCadastraAutomovel extends Application {
 
     private MenuGerente menuGer;
     private ListaModelo listaMod;
@@ -34,12 +34,11 @@ public class TelaGerCadastraModelo extends Application {
 
 
 
-    public TelaGerCadastraModelo(MenuGerente menuGer, ListaModelo lmod, ListaCategoria lcat, ListaMarcas lmar) {
+    public TelaGerCadastraAutomovel(MenuGerente menuGer, ListaModelo lmod) {
         super();
         this.menuGer = menuGer;
         this.listaMod = lmod;
-        this.listaCat = lcat;
-        this.listaMar = lmar;
+
     }
 
     @Override
