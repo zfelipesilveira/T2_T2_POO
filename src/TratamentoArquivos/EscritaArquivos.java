@@ -13,6 +13,7 @@ public class EscritaArquivos {
 
     //private Pessoa lista[];
     private Cliente listaCli[];
+    private CategoriaAutomovel listaCategoria[];
 
 
     public void gravaLinhasTexto() {
@@ -63,7 +64,11 @@ public class EscritaArquivos {
         Path path1 = Paths.get("categorias.txt");
         try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
             for (CategoriaAutomovel cat : lista) {
-                writer.format("%s",cat.getNome());
+                if(cat instanceof CategoriaAutomovel){
+                    writer.format("%s%n",cat.getNome());
+                }
+
+
             }
         }
         catch (IOException e) {
@@ -75,7 +80,8 @@ public class EscritaArquivos {
         Path path1 = Paths.get("marcas.txt");
         try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
             for (MarcaAutomovel mar : lista) {
-                writer.format("%s",mar.getNome());
+                if(mar instanceof MarcaAutomovel) writer.format("%s",mar.getNome());
+                //writer.format("%s",mar.getNome());
             }
         }
         catch (IOException e) {

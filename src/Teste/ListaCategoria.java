@@ -72,6 +72,7 @@ public class ListaCategoria {
         return false;
     }
 
+
     public int getTotal(){
         return total;
     }

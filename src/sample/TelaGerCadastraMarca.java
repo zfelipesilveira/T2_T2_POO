@@ -3,6 +3,7 @@ package sample;
 
 
 import Teste.*;
+import TratamentoArquivos.EscritaArquivos;
 import TratamentoArquivos.LeituraArquivoTextoTeste;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -27,6 +28,7 @@ public class TelaGerCadastraMarca extends Application {
 
     private MenuGerente menuGer;
     private ListaMarcas listaMar;
+    EscritaArquivos escritaArquivos = new EscritaArquivos();
 
 
 
@@ -102,6 +104,14 @@ public class TelaGerCadastraMarca extends Application {
             actiontarget.setText("Categoria cadastrada!");
 
 
+        });
+
+        btnSalvar.setOnAction(e -> {
+            MarcaAutomovel[] listaSalvar = new MarcaAutomovel[100];
+            listaSalvar = listaMar.getMarcas().toArray(listaSalvar);
+            escritaArquivos.gravaRegistrosMarcas(listaSalvar);
+            actiontarget.setFill(Color.GREEN);
+            actiontarget.setText("Clientes salvos em txt");
         });
 
 //        btnCadastrar.setOnAction(e -> {

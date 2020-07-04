@@ -12,6 +12,10 @@ public class ListaMarcas{
         marcas = new ArrayList<MarcaAutomovel>(qtdMax);
     }
 
+    public ArrayList<MarcaAutomovel> getMarcas(){
+        return marcas;
+    }
+
 
 
     public MarcaAutomovel pesquisaMarca(String nome){
