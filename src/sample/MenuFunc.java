@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -24,6 +25,7 @@ public class MenuFunc extends Application {
     private TelaFuncConsultaValorLocacao telaFCVL;
     private TelaFuncRealizaLocacao telaFRL;
     private TelaFuncFinalizaLocacao telaFFL;
+    private ComboBox cbCategorias;
 
     //coleções necessárias
     private ListaAutomoveis listaAuto;

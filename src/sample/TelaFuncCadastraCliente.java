@@ -118,6 +118,7 @@ public class TelaFuncCadastraCliente extends Application {
             //System.out.println("Botao pressionado! User name: "+ userTextField.getText() + ", Password: " + pwBox.getText());
             Cliente cpf = new PessoaFisica(nomeTextField.getText(),telBox.getText(), cpfTextField.getText());
             //if (rbFisica.equals(true))
+            if (rbFisica.isSelected()) System.out.println("cpf selecionado");
             listaCli.insere(cpf);
             listaCli.mostra();
             actiontarget.setFill(Color.GREEN);

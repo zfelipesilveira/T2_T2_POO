@@ -24,7 +24,7 @@ public class MenuGerente extends Application {
     private TelaGerCarregarDados telaGerCarregarDados;
     private TelaGerCadastraCategoria telaGerCadastraCategoria;
     private TelaGerCadastraMarca telaGerCadastraMarca;
-    // private TelaGerCadastraModelo telaGerCadastraModelo;
+    private TelaGerCadastraModelo telaGerCadastraModelo;
     // private TelaGerCadastraAutomovel telaGerCadastraAutomovel;
     // private TelaGerRemoveAutomovel telaGerRemoveAutomovel
     // private TelaGerConsultaLocacoes telaGerConsultaLocacoes
@@ -60,6 +60,7 @@ public class MenuGerente extends Application {
         telaGerCarregarDados = new TelaGerCarregarDados(this,la,lcat,lcli,lmar,lmod, ll, pp);
         telaGerCadastraCategoria = new TelaGerCadastraCategoria(this,listaCat);
         telaGerCadastraMarca = new TelaGerCadastraMarca(this, listaMar);
+        telaGerCadastraModelo = new TelaGerCadastraModelo(this,listaMod,listaCat,listaMar);
 
 
     }

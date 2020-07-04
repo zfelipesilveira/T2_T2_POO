@@ -114,7 +114,10 @@ public class TelaFuncConsultaDisponibilidade extends Application {
         // Tratamento de evento dos botoes
         btnVoltar.setOnAction(e -> {
             try {
+
                 menuFunc.start(thestage);
+
+
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
