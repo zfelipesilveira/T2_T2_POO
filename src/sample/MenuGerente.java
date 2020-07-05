@@ -186,6 +186,22 @@ public class MenuGerente extends Application {
             }
         });
 
+        btnConsultarLocacoes.setOnAction(e -> {
+            try {
+                telaGerConsultaLocacoes.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        btnConsultarClientes.setOnAction(e -> {
+            try {
+                telaGerConsultaClientes.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
 //        btnCadCli.setOnAction(e -> {
 //            try {
 //
