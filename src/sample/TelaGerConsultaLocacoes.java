@@ -81,7 +81,7 @@ public class TelaGerConsultaLocacoes extends Application {
 
         btnPesquisaLocacoes.setOnAction(e -> {
             try {
-
+                listaLocacoes.atualizaValorDasLocacoes();
                 String stringLista = listaLocacoes.toString();
                 System.out.println(stringLista);
 
