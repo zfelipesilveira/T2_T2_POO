@@ -4,6 +4,7 @@ package sample;
 import Teste.Cliente;
 import Teste.ListaClientes;
 import Teste.PessoaFisica;
+import Teste.PessoaJuridica;
 import TratamentoArquivos.EscritaArquivos;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -115,14 +116,30 @@ public class TelaFuncCadastraCliente extends Application {
 
         // Tratamento de evento do botao
         btnCadastrar.setOnAction(e -> {
-            //System.out.println("Botao pressionado! User name: "+ userTextField.getText() + ", Password: " + pwBox.getText());
-            Cliente cpf = new PessoaFisica(nomeTextField.getText(),telBox.getText(), cpfTextField.getText());
-            //if (rbFisica.equals(true))
-            if (rbFisica.isSelected()) System.out.println("cpf selecionado");
-            listaCli.insere(cpf);
-            listaCli.mostra();
-            actiontarget.setFill(Color.GREEN);
-            actiontarget.setText("Cliente cadastrado");
+            try {
+                if(nomeTextField.getText().isEmpty() || telBox.getText().isEmpty() || cpfTextField.getText().isEmpty() ) {
+                    actiontarget.setFill(Color.FIREBRICK);
+                    actiontarget.setText("Preencha os campos corretamente");
+                }
+                else {
+                    if (rbFisica.isSelected()) {
+                        Cliente cpf = new PessoaFisica(nomeTextField.getText(), telBox.getText(), cpfTextField.getText());
+                        listaCli.insere(cpf);
+                        listaCli.mostra();
+                        actiontarget.setFill(Color.GREEN);
+                        actiontarget.setText("Cliente cadastrado");
+                    }
+                    if (rbJuridica.isSelected()) {
+                        Cliente cnpj = new PessoaJuridica(nomeTextField.getText(), telBox.getText(), cpfTextField.getText());
+                        listaCli.insere(cnpj);
+                        listaCli.mostra();
+                        actiontarget.setFill(Color.GREEN);
+                        actiontarget.setText("Cliente cadastrado");
+                    }
+                }
+            } catch (Exception ex){
+                ex.printStackTrace();
+            }
         });
 
         btnSalvarClientes.setOnAction(e -> {

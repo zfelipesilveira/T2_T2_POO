@@ -3,6 +3,7 @@ package sample;
 
 
 import Teste.*;
+import TratamentoArquivos.EscritaArquivos;
 import TratamentoArquivos.LeituraArquivoTextoTeste;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -30,6 +31,7 @@ public class TelaGerCadastraAutomovel extends Application {
     private ListaAutomoveis listaAuto;
     private ToggleGroup rbNacionalImportado;
     private RadioButton rbNacional, rbImportado;
+    EscritaArquivos escritaArquivos = new EscritaArquivos();
 
 
 
@@ -160,15 +162,18 @@ public class TelaGerCadastraAutomovel extends Application {
 
         });
 
-
-
-//        btnCadastrar.setOnAction(e -> {
-//            try {
-//                raiz.start(thestage);
-//            } catch (Exception ex) {
-//                ex.printStackTrace();
-//            }
-//        });
+        btnSalvar.setOnAction(e -> {
+            try {
+                Automovel[] listaSalvar = new Automovel[100];
+                listaSalvar = listaAuto.getAutomoveis().toArray(listaSalvar);
+                System.out.println(listaSalvar);
+                escritaArquivos.gravaRegistrosAutomoveis(listaSalvar);
+                actiontarget.setFill(Color.GREEN);
+                actiontarget.setText("Automóveis salvos em txt");
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
 
 //        btnCadCli.setOnAction(e -> {
 //            try {

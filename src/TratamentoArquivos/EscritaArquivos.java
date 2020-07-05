@@ -90,7 +90,7 @@ public class EscritaArquivos {
     }
 
     public void gravaRegistrosModelos(ModeloAutomovel[] lista){
-        Path path1 = Paths.get("marcas.txt");
+        Path path1 = Paths.get("modelos.txt");
         try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
             for (ModeloAutomovel mod : lista) {
                 if(mod instanceof ModeloNacional) {
@@ -108,6 +108,20 @@ public class EscritaArquivos {
             System.err.format("Erro de E/S: %s%n", e);
         }
 
+    }
+
+    public void gravaRegistrosAutomoveis(Automovel[] lista){
+        Path path1 = Paths.get("automoveis.txt");
+        try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
+            for (Automovel auto : lista) {
+                if(auto instanceof Automovel && auto.getDisponivel()==true) writer.format("%s;%d;%f;%s;%s%n",auto.getPlaca(),auto.getAno(),auto.getValorDiaria(),auto.getModelo().getNome(),"T");
+                //writer.format("%s",mar.getNome());
+                if(auto instanceof Automovel && auto.getDisponivel()==false) writer.format("%s;%d;%f;%s;%s%n",auto.getPlaca(),auto.getAno(),auto.getValorDiaria(),auto.getModelo().getNome(),"F");
+            }
+        }
+        catch (IOException e) {
+            System.err.format("Erro de E/S: %s%n", e);
+        }
     }
 
 

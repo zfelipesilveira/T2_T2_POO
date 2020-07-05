@@ -31,6 +31,10 @@ public class ListaAutomoveis {
         return str;
     }
 
+    public ArrayList<Automovel> getAutomoveis(){
+        return automoveis;
+    }
+
     public ArrayList<Automovel> pesquisaListaAutoDisponiveis(CategoriaAutomovel categoria){
         for(int i = 0; i<automoveis.size(); i++){
             if(automoveis.get(i).getModelo().getCategoria() == categoria){
