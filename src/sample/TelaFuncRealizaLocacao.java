@@ -225,8 +225,7 @@ public class TelaFuncRealizaLocacao extends Application {
 
                     System.out.println(listaLoca);
 
-                    double valorLocacao = loc.getValorLocacao();
-                    System.out.println("Valor da locação: " + valorLocacao);
+
                 }
 
             } catch (Exception ex) {
