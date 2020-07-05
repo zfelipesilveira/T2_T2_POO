@@ -72,9 +72,9 @@ public class ListaLocacoes {
         if (total < 1) System.out.println("Não há locações ");
         if (total > 0) {
             String str = " ";
-            str = "Lista de locações: + \n";
+            str = "";
             for (int i = 0; i < locacoes.size(); i++) {
-                str = str + locacoes.get(i).toString() + "\n" + "//////////////////////";
+                str = str + locacoes.get(i).toString() + "\n" + "/////////////////////////////" + "\n";
             }
             return str;
         }

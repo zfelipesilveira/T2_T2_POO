@@ -46,7 +46,7 @@ public class LeituraArquivoTextoTeste {
         }
     }
 
-    public void leRegistrosTextoCarga(ListaCategoria lcat, ListaMarcas lmar, ListaModelo lmod, ListaAutomoveis la, ListaClientes lcli, PilhaPedidos pp, PilhaPedidosLocacoes ppl) {
+    public void leRegistrosTextoCarga(ListaCategoria lcat, ListaMarcas lmar, ListaModelo lmod, ListaAutomoveis la, ListaClientes lcli, PilhaPedidosLocacoes ppl) {
         int contComentarios = 0;
         String secao = "";
         Path path = Paths.get("carga.txt");
@@ -100,7 +100,6 @@ public class LeituraArquivoTextoTeste {
 //                                    lcat.pesquisaCategoria(nomeCat), valorMod, ipiTaxa);
 //                            lmod.insere(modi);
 //                        }
-                        System.out.println(lmod);
 
                         System.out.println("Cadastrando modelos...");
 
@@ -156,17 +155,14 @@ public class LeituraArquivoTextoTeste {
                 if(secao.equals("PEDIDO"))
                     if (!linha.startsWith("/") && !linha.startsWith("[")){
                         String codPedido = sc.next();
+                        String placaAuto = sc.next();
                         String cpfcnpjped = sc.next();
                         String nomeCategoria = sc.next();
                         String dataInicio = sc.next();
                         String dataFim = sc.next();
-                        Automovel auto = la.retornaAutomovelLivrePorCategoria(nomeCategoria);
-                        System.out.println(auto);
-                        Locacao loc = new Locacao(lcli.pesquisaClientePorCpf(cpfcnpjped),la.retornaAutomovelLivrePorCategoria(nomeCategoria),dataInicio,dataFim);
+                        Automovel auto = la.pesquisaAutomovel(placaAuto);
+                        Locacao loc = new Locacao(lcli.pesquisaClientePorCpf(cpfcnpjped),auto,dataInicio,dataFim);
                         loc.setValorLocacao();
-                        System.out.println(loc);
-                        Pedido ped = new Pedido(codPedido,cpfcnpjped,lcat.pesquisaCategoria(nomeCategoria),dataInicio, dataFim);
-                        pp.insere(ped);
                         ppl.insere(loc);
 
 

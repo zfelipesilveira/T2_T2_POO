@@ -26,7 +26,7 @@ public class Automovel {
 
     public void setDisponivel(int d){
         if (d==1) disponivel = true;
-        else disponivel = false;
+        if (d==0) disponivel = false;
     }
 
 
@@ -76,7 +76,7 @@ public class Automovel {
         String ifmodelo = "";
         if(modelo!=null){ifmodelo = modelo.getNome();}
         return "Modelo: " + ifmodelo+ "\n" + "Placa: " + placa + "\n" + "Ano: " + ano + "\n" + "Valor Diária: " + valorDiaria
-                + "\n" + getDisponibilidade();
+                + "\n";
     }
 
 }

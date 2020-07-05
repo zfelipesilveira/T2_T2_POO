@@ -124,7 +124,7 @@ public class Locacao {
                 "Automóvel: " + automovel.toString() + "\n" +
                 "Data de início: " + dataInicio + "\n" +
                 "Data final: " + dataFinal + "\n" +
-                "Valor: " + valor;
+                "Valor: " + valor + "\n" + "//////////////////////////////";
     }
 
 

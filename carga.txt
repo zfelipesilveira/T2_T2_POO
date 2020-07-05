@@ -10,7 +10,7 @@
 3;Mercedes
 // Modelo: código do modelo ; nome do modelo ; valor do modelo ; nome da categoria ; nome da marca ; tipo (Nnacional,I-importado ; valor do IPI ou taxa de importação
 [MODELO]
-1;Compass;120000.00;Sedan;Jeep;N;25
+1;Compass;120000.00;SUV Medio;Jeep;N;25
 2;Cherokee;250000.00;SUV Medio;Jeep;I;75
 3;Civic;100000.00;Sedan;Honda;N;10
 4;Classe A;100000.00;Sedan;Mercedes;I;10
@@ -28,7 +28,7 @@ DDD-4D44;Classe A;2019;10.00;T
 61.797.924/0007-40;HP;995067433;J
 // Pedido de locação: código do pedido ; CPF ou CNPJ ; nome da categoria desejada ; data de início ; data de fim
 [PEDIDO]
-1;355.014.791-09;Sedan;10/10/2020;14/10/2020
-2;88.630.413/0002-81;SUV Medio;05/09/2020;14/09/2020
-3;61.797.924/0007-40;Sedan;01/10/2020;09/10/2020
-4;336.212.777-06;SUV Medio;01/10/2020;09/10/2020
+1;AAA-1A11;355.014.791-09;Sedan;10/10/2020;14/10/2020
+2;BBB-B2BB;88.630.413/0002-81;SUV Medio;05/09/2020;14/09/2020
+3;CCC-3C33;61.797.924/0007-40;Sedan;01/10/2020;09/10/2020
+4;DDD-4D44;336.212.777-06;SUV Medio;01/10/2020;09/10/2020

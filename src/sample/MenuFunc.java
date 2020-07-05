@@ -38,7 +38,7 @@ public class MenuFunc extends Application {
     private PilhaPedidosLocacoes pilhaPedLoc;
 
     public MenuFunc(Application raiz, ListaAutomoveis la, ListaCategoria lcat, ListaClientes lcli,
-                    ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp, PilhaPedidosLocacoes ppl) {
+                    ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidosLocacoes ppl) {
         super();
         this.raiz = raiz;
 
@@ -50,7 +50,6 @@ public class MenuFunc extends Application {
         this.listaMar = lmar;
         this.listaMod = lmod;
         this.listaLoc = ll;
-        this.pilhaPed = pp;
         this.pilhaPedLoc = ppl;
 
 

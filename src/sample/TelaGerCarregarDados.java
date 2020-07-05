@@ -46,7 +46,7 @@ public class TelaGerCarregarDados extends Application {
 
 
     public TelaGerCarregarDados(MenuGerente menuGer, ListaAutomoveis la, ListaCategoria lcat, ListaClientes lcli,
-                                ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp, PilhaPedidosLocacoes ppl) {
+                                ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidosLocacoes ppl) {
         super();
         this.menuGer = menuGer;
         this.listaAuto = la;
@@ -54,7 +54,6 @@ public class TelaGerCarregarDados extends Application {
         this.listaCli = lcli;
         this.listaMar = lmar;
         this.listaMod = lmod;
-        this.pilhaPed = pp;
         this.listaLoca = ll;
         this.pilhaPedLoc = ppl;
         this.leArquivo = new LeituraArquivoTextoTeste();
@@ -121,9 +120,9 @@ public class TelaGerCarregarDados extends Application {
         nomeArquivoTextField.setId("textField");
         nomeArquivoTextField.setPromptText("Search");
 
-        TextArea listaDePedidos = new TextArea();
+        Text listaDePedidos = new Text();
         painel3.add(listaDePedidos,1,4);
-        listaDePedidos.setId("ListaDeClientes");
+        listaDePedidos.setId("ListaDePedidos");
 
 
 
@@ -163,10 +162,10 @@ public class TelaGerCarregarDados extends Application {
 
         btnCarregarDados.setOnAction(e -> {
             if(nomeArquivoTextField.getText().equals("carga.txt")) {
-                leArquivo.leRegistrosTextoCarga(listaCat, listaMar, listaMod, listaAuto, listaCli, pilhaPed, pilhaPedLoc);
+                leArquivo.leRegistrosTextoCarga(listaCat, listaMar, listaMod, listaAuto, listaCli, pilhaPedLoc);
                 actiontarget.setFill(Color.GREEN);
                 actiontarget.setText("Dados carregados!");
-                listaDePedidos.setText(pilhaPedLoc.toString());
+                listaDePedidos.setText("Pedidos de locação no sistema!");
 
             }
             else if(nomeArquivoTextField.getText().equals("clientes.txt")){
@@ -180,6 +179,8 @@ public class TelaGerCarregarDados extends Application {
             try {
                 while(pilhaPedLoc.getTotal()>0){
                     Locacao loc = pilhaPedLoc.remove();
+                    System.out.println(loc.getAutomovel().toString());
+                    loc.getAutomovel().setDisponivel(0);
                     loc.calculaPeriodo();
                     loc.setValorLocacao();
                     listaLoca.insere(loc);

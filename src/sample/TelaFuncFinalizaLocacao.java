@@ -167,9 +167,9 @@ public class TelaFuncFinalizaLocacao extends Application {
 //        btnFinal.setOnAction(e -> {
 //            thestage.close();
 //        });
-        Scene scene4 = new Scene(painel4, 500, 300);
+        Scene scene4 = new Scene(painel4, 650, 400);
 
-        primaryStage.setTitle("Realizar locação");
+        primaryStage.setTitle("Finalizar locação");
         primaryStage.setScene(scene4);
         primaryStage.show();
     }

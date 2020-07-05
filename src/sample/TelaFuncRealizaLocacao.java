@@ -212,6 +212,7 @@ public class TelaFuncRealizaLocacao extends Application {
                     String dataInicio = dataInicioTextField.getText();
                     String dataFinal = dataFinalTextField.getText();
                     Automovel auto = listaAuto.pesquisaAutomovel(placaAuto);
+                    auto.setDisponivel(0);
                     Cliente cliente = listaCli.pesquisaClientePorCpf(cpfcnpj);
                     Locacao loc = new Locacao(cliente, auto, dataInicio, dataFinal);
                     loc.calculaPeriodo();

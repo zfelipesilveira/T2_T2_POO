@@ -23,7 +23,7 @@ public class ListaAutomoveis {
     public String pesquisaAutoDispPorCategoria(CategoriaAutomovel categoria){
         String str = "";
         for (int i = 0; i<automoveis.size(); i++){
-            if(automoveis.get(i).getModelo().getCategoria() == categoria){
+            if(automoveis.get(i).getModelo().getCategoria() == categoria && automoveis.get(i).getDisponivel() == true){
                 str = str + automoveis.get(i).toString() + "\n";
 
             }
