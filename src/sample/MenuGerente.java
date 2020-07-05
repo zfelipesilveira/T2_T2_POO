@@ -27,9 +27,9 @@ public class MenuGerente extends Application {
     private TelaGerCadastraModelo telaGerCadastraModelo;
     private TelaGerCadastraAutomovel telaGerCadastraAutomovel;
     private TelaGerRemoveAutomovel telaGerRemoveAutomovel;
-    // private TelaGerConsultaLocacoes telaGerConsultaLocacoes
-    // private TelaGerConsultaClientes telaGerConsultaClientes
-    // private TelaGerConsultaAutomoveis telaGerConsultaAutomoveis
+    private TelaGerConsultaLocacoes telaGerConsultaLocacoes;
+    private TelaGerConsultaClientes telaGerConsultaClientes;
+    private TelaGerConsultaAutomoveis telaGerConsultaAutomoveis;
 
     //coleções necessárias
     private ListaAutomoveis listaAuto;
@@ -63,8 +63,9 @@ public class MenuGerente extends Application {
         telaGerCadastraModelo = new TelaGerCadastraModelo(this,listaMod,listaCat,listaMar);
         telaGerCadastraAutomovel = new TelaGerCadastraAutomovel(this,listaMod,listaAuto);
         telaGerRemoveAutomovel = new TelaGerRemoveAutomovel(this,listaAuto);
-
-
+        telaGerConsultaClientes = new TelaGerConsultaClientes(this, listaCli);
+        telaGerConsultaLocacoes = new TelaGerConsultaLocacoes(this, listaLoc);
+        telaGerConsultaAutomoveis = new TelaGerConsultaAutomoveis(this,listaAuto);
     }
 
     @Override
@@ -127,6 +128,14 @@ public class MenuGerente extends Application {
             }
         });
 
+        btnConsultarAuto.setOnAction(e -> {
+            try {
+                telaGerConsultaAutomoveis.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
         btnCarregarDados.setOnAction(e -> {
             try {
                 telaGerCarregarDados.start(thestage);
@@ -134,6 +143,16 @@ public class MenuGerente extends Application {
                 ex.printStackTrace();
             }
         });
+
+
+        btnConsultarLocacoes.setOnAction(e -> {
+            try {
+                telaGerConsultaLocacoes.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
 
         btnCadCat.setOnAction(e -> {
             try {
@@ -150,6 +169,15 @@ public class MenuGerente extends Application {
                 ex.printStackTrace();
             }
         });
+
+        btnConsultarClientes.setOnAction(e -> {
+            try {
+                telaGerConsultaClientes.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
 
         btnCadMod.setOnAction(e -> {
             try {

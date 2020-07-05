@@ -67,7 +67,6 @@ public class MenuPrincipal extends Application {
 
         Button btnFunc = new Button("Menu de funcionários");
         Button btnGerente = new Button("Menu de gerente");
-        Button btncarregarDados = new Button("Carregar dados");
         Button btnFinal = new Button("Terminar");
 
 
@@ -75,7 +74,6 @@ public class MenuPrincipal extends Application {
 
         painel1.add(btnFunc, 0, 3, 2, 1);
         painel1.add(btnGerente, 0, 4);
-        painel1.add(btncarregarDados, 0, 5);
         painel1.add(btnFinal, 0, 6);
 
         // Tratamento de evento dos botoes
