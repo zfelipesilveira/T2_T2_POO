@@ -22,10 +22,16 @@ public class ListaCategoria {
         return categorias;
     }
 
-    public ArrayList<String> getCategoriasNomes(){
+
+
+    public ArrayList<String> getCategoriasNomesErrada(){
         for(int i =0; i<categorias.size(); i++){
             this.categoriasNomes.add(categorias.get(i).getNome());
         }
+        return categoriasNomes;
+    }
+
+    public ArrayList<String> getCategoriasNomes(){
         return categoriasNomes;
     }
 
@@ -52,7 +58,7 @@ public class ListaCategoria {
     }
 
     public boolean insere(CategoriaAutomovel novaCategoria) {
-        if(categorias.add(novaCategoria)){
+        if(categorias.add(novaCategoria) && categoriasNomes.add(novaCategoria.getNome())){
             total++;
             return true;
         }

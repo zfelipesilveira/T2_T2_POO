@@ -191,7 +191,7 @@ public class TelaFuncConsultaValorLocacao extends Application {
                 loc.calculaPeriodo();
                 double valorLocacao = loc.getValorLocacao();
                 actiontarget.setFill(Color.BLACK);
-                String str = "Valor da locação:" + valorLocacao;
+                String str = "Valor da locação: " + valorLocacao + " reais";
                 actiontarget.setText(str);
                 System.out.println("Valor da locação: " + valorLocacao);
 
