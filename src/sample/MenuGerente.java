@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /*
-	Exemplo de aplicacao grafica com multiplas janelas
+	Menu de gerente da aplicação
  */
 
 public class MenuGerente extends Application {
@@ -202,15 +202,7 @@ public class MenuGerente extends Application {
             }
         });
 
-//        btnCadCli.setOnAction(e -> {
-//            try {
-//
-//            }
-//        });
 
-//        btnFinal.setOnAction(e -> {
-//            thestage.close();
-//        });
         Scene scene2 = new Scene(painel2, 600, 500);
 
         primaryStage.setTitle("Menu de Gerente");

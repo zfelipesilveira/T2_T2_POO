@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /*
-	Exemplo de aplicacao grafica com multiplas cenas
+	Menu principal da aplicação
  */
 
 public class MenuPrincipal extends Application {
@@ -35,13 +35,6 @@ public class MenuPrincipal extends Application {
         super();
         menuFunc = new MenuFunc(this, listaAuto, listaCat, listaCli, listaMar, listaMod, listaLoc, pilhaPed);
         menuGerente = new MenuGerente(this, listaAuto, listaCat, listaCli, listaMar, listaMod, listaLoc, pilhaPed);
-//        listaAuto = new ListaAutomoveis(100);
-//        listaCat = new ListaCategoria(100);
-//        listaCli = new ListaClientes(100);
-//        listaMar = new ListaMarcas(100);
-//        listaMod = new ListaModelo(100);
-//        listaLoc = new ListaLocacoes(100);
-//        pilhaPed = new PilhaPedidos();
 
     }
 
