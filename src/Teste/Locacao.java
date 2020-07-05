@@ -12,6 +12,8 @@ public class Locacao {
     private double periodo;
     private double valor;
     private String tipoCliente;
+    private Date dataUm;
+    private Date dataDois;
 
 
     public Locacao(Cliente cliente, Automovel automovel, String dataInicio, String dataFinal){
@@ -32,6 +34,13 @@ public class Locacao {
         this.dataInicio = dataInicio;
         this.dataFinal = dataFinal;
         this.tipoCliente = tipoCliente;
+    }
+
+    public void setDates() throws ParseException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        dataUm = simpleDateFormat.parse(dataInicio);
+        dataDois = simpleDateFormat.parse(dataFinal);
+
     }
 
     public double getValorLocacao(){
