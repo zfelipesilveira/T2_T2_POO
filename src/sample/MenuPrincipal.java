@@ -83,7 +83,7 @@ public class MenuPrincipal extends Application {
         });
 
         Scene scene1 = new Scene(painel1, 600, 500);
-        primaryStage.setTitle("Multiplas cenas");
+        primaryStage.setTitle("Menu Principal");
         primaryStage.setScene(scene1);
         primaryStage.show();
     }
