@@ -46,7 +46,14 @@ public class Locacao {
     }
 
     public void setValorLocacao(){
-        valor = (automovel.getModelo().getValorFixo()/1000) + (automovel.getValorDiaria() * periodo);
+        if(tipoCliente.equalsIgnoreCase("J")){
+            valor = (automovel.getModelo().getValorFixo()/1000) + ((automovel.getValorDiaria()*0.95) * periodo);
+
+        }
+        else{
+            valor = (automovel.getModelo().getValorFixo()/1000) + (automovel.getValorDiaria() * periodo);
+
+        }
     }
 
     public void calculaPeriodo(){

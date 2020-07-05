@@ -1,5 +1,8 @@
 package TratamentoArquivos;
 
+import Teste.Cliente;
+import Teste.ListaClientes;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -10,7 +13,7 @@ import java.util.Scanner;
 
 public class LeituraDeTextos {
 
-    public void leRegistrosTextoClientes() {
+    public void leRegistrosTextoClientes(ListaClientes lcli) {
         Path path = Paths.get("teste2.txt");
         try (BufferedReader br = Files.newBufferedReader(path, Charset.defaultCharset())) {
             String linha = null;

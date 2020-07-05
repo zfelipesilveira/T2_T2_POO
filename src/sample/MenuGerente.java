@@ -27,9 +27,9 @@ public class MenuGerente extends Application {
     private TelaGerCadastraModelo telaGerCadastraModelo;
     private TelaGerCadastraAutomovel telaGerCadastraAutomovel;
     private TelaGerRemoveAutomovel telaGerRemoveAutomovel;
-    //private TelaGerConsultaLocacoes telaGerConsultaLocacoes;
-    // private TelaGerConsultaClientes telaGerConsultaClientes
-    // private TelaGerConsultaAutomoveis telaGerConsultaAutomoveis
+    private TelaGerConsultaLocacoes telaGerConsultaLocacoes;
+    private TelaGerConsultaClientes telaGerConsultaClientes;
+    private TelaGerConsultaAutomoveis telaGerConsultaAutomoveis;
 
     //coleções necessárias
     private ListaAutomoveis listaAuto;
@@ -63,6 +63,9 @@ public class MenuGerente extends Application {
         telaGerCadastraModelo = new TelaGerCadastraModelo(this,listaMod,listaCat,listaMar);
         telaGerCadastraAutomovel = new TelaGerCadastraAutomovel(this,listaMod,listaAuto);
         telaGerRemoveAutomovel = new TelaGerRemoveAutomovel(this,listaAuto);
+        telaGerConsultaClientes = new TelaGerConsultaClientes(this, listaCli);
+        telaGerConsultaLocacoes = new TelaGerConsultaLocacoes(this, listaLoc);
+        telaGerConsultaAutomoveis = new TelaGerConsultaAutomoveis(this,listaAuto);
 
 
     }

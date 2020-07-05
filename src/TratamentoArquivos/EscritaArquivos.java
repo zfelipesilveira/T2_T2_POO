@@ -124,6 +124,10 @@ public class EscritaArquivos {
         }
     }
 
+    public void gravaRegistrosLocacoes(Locacao[] lista){
+
+    }
+
 
 
 
