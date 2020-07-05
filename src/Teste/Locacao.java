@@ -46,7 +46,7 @@ public class Locacao {
     }
 
     public void setValorLocacao(){
-        if(tipoCliente.equalsIgnoreCase("J")){
+        if(cliente instanceof PessoaFisica){
             valor = (automovel.getModelo().getValorFixo()/1000) + ((automovel.getValorDiaria()*0.95) * periodo);
 
         }
@@ -96,6 +96,8 @@ public class Locacao {
     public String toString(){
         return "Cliente: " + cliente.getNome() + "\n" +
                 "Automóvel: " + automovel.toString() + "\n" +
+                "Data de início: " + dataInicio + "\n" +
+                "Data final: " + dataFinal + "\n" +
                 "Valor: " + valor;
     }
 

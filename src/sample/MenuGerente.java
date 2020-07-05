@@ -178,6 +178,14 @@ public class MenuGerente extends Application {
             }
         });
 
+        btnConsultarAuto.setOnAction(e -> {
+            try {
+                telaGerConsultaAutomoveis.start(thestage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
 //        btnCadCli.setOnAction(e -> {
 //            try {
 //
