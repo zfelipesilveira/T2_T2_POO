@@ -4,6 +4,7 @@ package sample;
 
 import Teste.*;
 import TratamentoArquivos.LeituraArquivoTextoTeste;
+import TratamentoArquivos.LeituraDeTextos;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -40,6 +41,7 @@ public class TelaGerCarregarDados extends Application {
     private PilhaPedidosLocacoes pilhaPedLoc;
 
     private LeituraArquivoTextoTeste leArquivo;
+    private LeituraDeTextos leArquivosSeparados;
 
 
 
@@ -56,6 +58,7 @@ public class TelaGerCarregarDados extends Application {
         this.listaLoca = ll;
         this.pilhaPedLoc = ppl;
         this.leArquivo = new LeituraArquivoTextoTeste();
+        this.leArquivosSeparados = new LeituraDeTextos();
 
 
     }
@@ -144,6 +147,37 @@ public class TelaGerCarregarDados extends Application {
                 listaDePedidos.setText("Pedidos de locação no sistema!");
 
             }
+            if(nomeArquivoTextField.getText().equals("categorias.txt")){
+                leArquivosSeparados.leRegistrosTextoCategorias(listaCat);
+                actiontarget.setFill(Color.GREEN);
+                actiontarget.setText("Dados carregados!");
+                //listaDePedidos.setText("Pedidos de locação no sistema!");
+            }
+            if(nomeArquivoTextField.getText().equals("marcas.txt")){
+                leArquivosSeparados.leRegistrosTextoMarcas(listaMar);
+                actiontarget.setFill(Color.GREEN);
+                actiontarget.setText("Dados carregados!");
+                //listaDePedidos.setText("Pedidos de locação no sistema!");
+            }
+            if(nomeArquivoTextField.getText().equals("modelos.txt")){
+                leArquivosSeparados.leRegistrosTextoModelos(listaMod,listaCat,listaMar);
+                actiontarget.setFill(Color.GREEN);
+                actiontarget.setText("Dados carregados!");
+                //listaDePedidos.setText("Pedidos de locação no sistema!");
+            }
+            if(nomeArquivoTextField.getText().equals("automoveis.txt")){
+                leArquivosSeparados.leRegistrosTextoAutomoveis(listaAuto,listaMod);
+                actiontarget.setFill(Color.GREEN);
+                actiontarget.setText("Dados carregados!");
+                //listaDePedidos.setText("Pedidos de locação no sistema!");
+            }
+            if(nomeArquivoTextField.getText().equals("locacoes.txt")){
+                leArquivosSeparados.leRegistrosTextoLocacoes(listaLoca,listaCli,listaAuto);
+                actiontarget.setFill(Color.GREEN);
+                actiontarget.setText("Dados carregados!");
+                //listaDePedidos.setText("Pedidos de locação no sistema!");
+            }
+
             else if(nomeArquivoTextField.getText().equals("clientes.txt")){
 
             }
