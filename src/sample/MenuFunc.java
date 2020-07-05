@@ -35,9 +35,10 @@ public class MenuFunc extends Application {
     private ListaModelo listaMod;
     private ListaLocacoes listaLoc;
     private PilhaPedidos pilhaPed;
+    private PilhaPedidosLocacoes pilhaPedLoc;
 
     public MenuFunc(Application raiz, ListaAutomoveis la, ListaCategoria lcat, ListaClientes lcli,
-                    ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp) {
+                    ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp, PilhaPedidosLocacoes ppl) {
         super();
         this.raiz = raiz;
 
@@ -50,6 +51,7 @@ public class MenuFunc extends Application {
         this.listaMod = lmod;
         this.listaLoc = ll;
         this.pilhaPed = pp;
+        this.pilhaPedLoc = ppl;
 
 
         telaFCC = new TelaFuncCadastraCliente(this, listaCli);

@@ -54,6 +54,16 @@ public class ListaAutomoveis {
         return retorno;
     }
 
+    public Automovel retornaAutomovelLivrePorCategoria(String nomeCategoria){
+        Automovel retorno = null;
+        for(int i = 0; i<automoveis.size(); i++){
+            if(automoveis.get(i).getCategoria().getNome().equals(nomeCategoria) && automoveis.get(i).getDisponivel() == true){
+                return automoveis.get(i);
+            }
+        }
+        return retorno;
+    }
+
     public boolean insere(Automovel novoAutomovel) {
         if(automoveis.add(novoAutomovel)){
             total++;

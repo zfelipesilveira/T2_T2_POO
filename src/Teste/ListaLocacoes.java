@@ -1,6 +1,9 @@
 package Teste;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 public class ListaLocacoes {
     private ArrayList<Locacao> locacoes;
     private int total = 0;
@@ -19,6 +22,24 @@ public class ListaLocacoes {
             }
         }
         return retorno;
+    }
+
+    public boolean procuraLocacaoNessaData(String data){
+        for(int i = 0; i<locacoes.size(); i++) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            Date dataChave = null;
+            try {
+                dataChave = simpleDateFormat.parse(data);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            locacoes.get(i).setDates();
+            Date dataUm = locacoes.get(i).getDataUm();
+            Date dataDois = locacoes.get(i).getDataDois();
+            if (dataChave.after(dataUm) && dataChave.before(dataDois)) return true;
+
+        }
+        return false;
     }
 
     public boolean insere(Locacao novaLocacao) {

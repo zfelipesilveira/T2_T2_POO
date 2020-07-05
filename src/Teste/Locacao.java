@@ -36,10 +36,19 @@ public class Locacao {
         this.tipoCliente = tipoCliente;
     }
 
-    public void setDates() throws ParseException {
+
+    public void setDates(){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        dataUm = simpleDateFormat.parse(dataInicio);
-        dataDois = simpleDateFormat.parse(dataFinal);
+        try {
+            dataUm = simpleDateFormat.parse(dataInicio);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        try {
+            dataDois = simpleDateFormat.parse(dataFinal);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -88,6 +97,14 @@ public class Locacao {
         long dias = diferencaEmMilisegundos / 1000 / 60 / 60 / 24;
         int diasInt = (int)dias;
         periodo = diasInt;
+    }
+
+    public Date getDataUm(){
+        return dataUm;
+    }
+
+    public Date getDataDois(){
+        return dataDois;
     }
 
     public Cliente getCliente(){

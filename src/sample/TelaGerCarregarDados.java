@@ -38,6 +38,7 @@ public class TelaGerCarregarDados extends Application {
     private ListaModelo listaMod;
     private PilhaPedidos pilhaPed;
     private ListaLocacoes listaLoca;
+    private PilhaPedidosLocacoes pilhaPedLoc;
 
     private LeituraArquivoTextoTeste leArquivo;
 
@@ -45,7 +46,7 @@ public class TelaGerCarregarDados extends Application {
 
 
     public TelaGerCarregarDados(MenuGerente menuGer, ListaAutomoveis la, ListaCategoria lcat, ListaClientes lcli,
-                                ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp) {
+                                ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp, PilhaPedidosLocacoes ppl) {
         super();
         this.menuGer = menuGer;
         this.listaAuto = la;
@@ -55,6 +56,7 @@ public class TelaGerCarregarDados extends Application {
         this.listaMod = lmod;
         this.pilhaPed = pp;
         this.listaLoca = ll;
+        this.pilhaPedLoc = ppl;
         this.leArquivo = new LeituraArquivoTextoTeste();
 
 
@@ -119,6 +121,9 @@ public class TelaGerCarregarDados extends Application {
         nomeArquivoTextField.setId("textField");
         nomeArquivoTextField.setPromptText("Search");
 
+        TextArea listaDePedidos = new TextArea();
+        painel3.add(listaDePedidos,1,4);
+        listaDePedidos.setId("ListaDeClientes");
 
 
 
@@ -130,13 +135,16 @@ public class TelaGerCarregarDados extends Application {
 
         Button btnCarregarDados = new Button("Carregar dados");
         Button btnVoltar = new Button("Voltar");
+        Button btnCadastrarPedidos = new Button("Cadastrar pedidos em locações");
 
 
 
 
 
-        painel3.add(btnCarregarDados, 1, 6);
+        painel3.add(btnCarregarDados, 1, 2);
+        painel3.add(btnCadastrarPedidos,1,7);
         painel3.add(btnVoltar, 0, 8);
+
 
         final Text actiontarget = new Text();
         painel3.add(actiontarget, 1, 10);
@@ -155,15 +163,31 @@ public class TelaGerCarregarDados extends Application {
 
         btnCarregarDados.setOnAction(e -> {
             if(nomeArquivoTextField.getText().equals("carga.txt")) {
-                leArquivo.leRegistrosTextoCarga(listaCat, listaMar, listaMod, listaAuto, listaCli, pilhaPed);
+                leArquivo.leRegistrosTextoCarga(listaCat, listaMar, listaMod, listaAuto, listaCli, pilhaPed, pilhaPedLoc);
                 actiontarget.setFill(Color.GREEN);
                 actiontarget.setText("Dados carregados!");
+                listaDePedidos.setText(pilhaPedLoc.toString());
+
             }
             else if(nomeArquivoTextField.getText().equals("clientes.txt")){
 
             }
             //else if(nome)
 
+        });
+
+        btnCadastrarPedidos.setOnAction(e -> {
+            try {
+                while(pilhaPedLoc.getTotal()>0){
+                    Locacao loc = pilhaPedLoc.remove();
+                    loc.calculaPeriodo();
+                    loc.setValorLocacao();
+                    listaLoca.insere(loc);
+                }
+                System.out.println(listaLoca);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         });
 
 
@@ -185,7 +209,7 @@ public class TelaGerCarregarDados extends Application {
 //        btnFinal.setOnAction(e -> {
 //            thestage.close();
 //        });
-        Scene scene3 = new Scene(painel3, 500, 400);
+        Scene scene3 = new Scene(painel3, 700, 600);
 
         primaryStage.setTitle("Menu de Funcionários");
         primaryStage.setScene(scene3);

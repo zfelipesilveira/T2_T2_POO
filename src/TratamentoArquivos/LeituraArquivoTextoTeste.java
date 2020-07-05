@@ -46,7 +46,7 @@ public class LeituraArquivoTextoTeste {
         }
     }
 
-    public void leRegistrosTextoCarga(ListaCategoria lcat, ListaMarcas lmar, ListaModelo lmod, ListaAutomoveis la, ListaClientes lcli, PilhaPedidos pp) {
+    public void leRegistrosTextoCarga(ListaCategoria lcat, ListaMarcas lmar, ListaModelo lmod, ListaAutomoveis la, ListaClientes lcli, PilhaPedidos pp, PilhaPedidosLocacoes ppl) {
         int contComentarios = 0;
         String secao = "";
         Path path = Paths.get("carga.txt");
@@ -120,11 +120,15 @@ public class LeituraArquivoTextoTeste {
                         Double valorDiaria = Double.parseDouble(sc.next());
                         String dispString = sc.next();
                         boolean dispBoolean;
-                        if(dispString.equalsIgnoreCase("T")) dispBoolean = true;
-                        if(dispString.equalsIgnoreCase("F")) dispBoolean = false;
-                        else dispBoolean = true;
-                        Automovel auto = new Automovel(placa,ano,valorDiaria,lmod.pesquisaModelo(nomeMod), dispBoolean);
-                        la.insere(auto);
+                        if(dispString.equals("T")) {
+                            Automovel auto = new Automovel(placa, ano, valorDiaria, lmod.pesquisaModelo(nomeMod), true);
+                            la.insere(auto);
+                        }
+                        if(dispString.equals("F")) {
+                            Automovel auto = new Automovel(placa, ano, valorDiaria, lmod.pesquisaModelo(nomeMod), false);
+                            la.insere(auto);
+                        }
+
                         System.out.println("Cadastrando automóveis...");
 
 //                        System.out.println(sc.next());
@@ -156,8 +160,17 @@ public class LeituraArquivoTextoTeste {
                         String nomeCategoria = sc.next();
                         String dataInicio = sc.next();
                         String dataFim = sc.next();
+                        Automovel auto = la.retornaAutomovelLivrePorCategoria(nomeCategoria);
+                        System.out.println(auto);
+                        Locacao loc = new Locacao(lcli.pesquisaClientePorCpf(cpfcnpjped),la.retornaAutomovelLivrePorCategoria(nomeCategoria),dataInicio,dataFim);
+                        loc.setValorLocacao();
+                        System.out.println(loc);
                         Pedido ped = new Pedido(codPedido,cpfcnpjped,lcat.pesquisaCategoria(nomeCategoria),dataInicio, dataFim);
                         pp.insere(ped);
+                        ppl.insere(loc);
+
+
+
 
                         System.out.println("Cadastrando pedidos" + "\n");
 

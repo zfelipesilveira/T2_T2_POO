@@ -4,7 +4,7 @@ public class Automovel {
     private String placa;
     private int ano;
     private double valorDiaria;
-    private boolean disponivel = true;
+    private boolean disponivel;
     public ModeloAutomovel modelo;
 
 
@@ -64,11 +64,19 @@ public class Automovel {
         return modelo;
     }
 
+    public String getDisponibilidade(){
+        String disp = "";
+        if(disponivel == true) disp = "disponível";
+        else if(disponivel == false) disp = "indisponível";
+        else disp = "erro";
+        return disp;
+    }
+
     public String toString(){
         String ifmodelo = "";
         if(modelo!=null){ifmodelo = modelo.getNome();}
         return "Modelo: " + ifmodelo+ "\n" + "Placa: " + placa + "\n" + "Ano: " + ano + "\n" + "Valor Diária: " + valorDiaria
-                + "\n" ;
+                + "\n" + getDisponibilidade();
     }
 
 }

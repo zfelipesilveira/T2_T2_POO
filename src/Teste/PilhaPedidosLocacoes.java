@@ -5,13 +5,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class PilhaPedidos {
-    private Stack<Pedido> pedidos;
+public class PilhaPedidosLocacoes {
+    private Stack<Locacao> pedidosLocacoes;
     private int total = 0;
     private int qtdMax;
 
-    public PilhaPedidos() {
-        pedidos = new Stack<Pedido>();
+    public PilhaPedidosLocacoes() {
+        pedidosLocacoes = new Stack<Locacao>();
     }
 
 //    public Pedido pesquisaLocacoes(String codPedido){
@@ -24,15 +24,15 @@ public class PilhaPedidos {
 //        return retorno;
 //    }
 
-    public void insere(Pedido novoPedido) {
-        pedidos.push(novoPedido);
+    public void insere(Locacao novaLocacao) {
+        pedidosLocacoes.push(novaLocacao);
         total = total +1;
 
     }
 
-    public Pedido remove(){
+    public Locacao remove(){
         total = total - 1;
-        return pedidos.pop();
+        return pedidosLocacoes.pop();
 
     }
 
@@ -40,12 +40,12 @@ public class PilhaPedidos {
         return total;
     }
 
-    public Stack<Pedido> getPedidos() {
-        return pedidos;
+    public Stack<Locacao> getPedidos() {
+        return pedidosLocacoes;
     }
 
     public String toString(){
-        return pedidos.toString();
+        return pedidosLocacoes.toString();
     }
 
     public void mostraTotal(){

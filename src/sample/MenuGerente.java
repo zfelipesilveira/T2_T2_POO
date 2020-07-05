@@ -39,10 +39,11 @@ public class MenuGerente extends Application {
     private ListaModelo listaMod;
     private ListaLocacoes listaLoc;
     private PilhaPedidos pilhaPed;
+    private PilhaPedidosLocacoes pilhaPedLoc;
 
 
     public MenuGerente(Application raiz, ListaAutomoveis la, ListaCategoria lcat, ListaClientes lcli,
-                       ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp) {
+                       ListaMarcas lmar, ListaModelo lmod, ListaLocacoes ll, PilhaPedidos pp, PilhaPedidosLocacoes ppl) {
         super();
         this.raiz = raiz;
 
@@ -55,9 +56,10 @@ public class MenuGerente extends Application {
         this.listaMod = lmod;
         this.listaLoc = ll;
         this.pilhaPed = pp;
+        this.pilhaPedLoc = ppl;
 
 
-        telaGerCarregarDados = new TelaGerCarregarDados(this,la,lcat,lcli,lmar,lmod, ll, pp);
+        telaGerCarregarDados = new TelaGerCarregarDados(this,la,lcat,lcli,lmar,lmod, ll, pp, ppl);
         telaGerCadastraCategoria = new TelaGerCadastraCategoria(this,listaCat);
         telaGerCadastraMarca = new TelaGerCadastraMarca(this, listaMar);
         telaGerCadastraModelo = new TelaGerCadastraModelo(this,listaMod,listaCat,listaMar);
