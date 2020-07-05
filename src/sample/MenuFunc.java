@@ -34,7 +34,6 @@ public class MenuFunc extends Application {
     private ListaMarcas listaMar;
     private ListaModelo listaMod;
     private ListaLocacoes listaLoc;
-    private PilhaPedidos pilhaPed;
     private PilhaPedidosLocacoes pilhaPedLoc;
 
     public MenuFunc(Application raiz, ListaAutomoveis la, ListaCategoria lcat, ListaClientes lcli,

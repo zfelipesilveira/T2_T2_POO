@@ -3,6 +3,7 @@ package sample;
 
 
 import Teste.*;
+import TratamentoArquivos.EscritaArquivos;
 import TratamentoArquivos.LeituraArquivoTextoTeste;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -35,6 +36,7 @@ public class TelaFuncRealizaLocacao extends Application {
     private ToggleGroup rbFisicaJuridica;
     private RadioButton rbFisica, rbJuridica;
     private ComboBox cbCategorias;
+    EscritaArquivos escritaArquivos = new EscritaArquivos();
 
 
 
@@ -141,6 +143,8 @@ public class TelaFuncRealizaLocacao extends Application {
 
         Button btnRealizarLocacao = new Button("Realizar Locação");
 
+        Button btnSalvarLocacoes = new Button("Salvar locações");
+
         Button btnVoltar = new Button("Voltar");
 
 
@@ -149,6 +153,7 @@ public class TelaFuncRealizaLocacao extends Application {
 
         painel4.add(btnBuscarAutomoveisDisp, 2, 2);
         painel4.add(btnRealizarLocacao,2,6);
+        painel4.add(btnSalvarLocacoes,2,7);
         painel4.add(btnVoltar, 0, 11);
 
         final Text actiontarget = new Text();
@@ -234,11 +239,18 @@ public class TelaFuncRealizaLocacao extends Application {
             }
         });
 
-//        btnCadCli.setOnAction(e -> {
-//            try {
-//
-//            }
-//        });
+        btnSalvarLocacoes.setOnAction(e -> {
+            try {
+                Locacao[] listaSalvar = new Locacao[100];
+                listaSalvar = listaLoca.getLocacoes().toArray(listaSalvar);
+                System.out.println(listaSalvar);
+                escritaArquivos.gravaRegistrosLocacoes(listaSalvar);
+                actiontarget.setFill(Color.GREEN);
+                actiontarget.setText("Categorias salvas em txt");
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
 
 //        btnFinal.setOnAction(e -> {
 //            thestage.close();

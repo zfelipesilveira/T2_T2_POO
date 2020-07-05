@@ -62,7 +62,7 @@ class ModeloNacionalTest {
         CategoriaAutomovel c1 = new CategoriaAutomovel("suv");
         MarcaAutomovel m1 = new MarcaAutomovel("ford");
         ModeloNacional modTeste = new ModeloNacional("fiesta", m1, c1, 5000, 50);
-        assertEquals(modTeste.getValorFixo(), 7500);
+        assertEquals(modTeste.getValorFixo(), 5250);
     }
 
 }

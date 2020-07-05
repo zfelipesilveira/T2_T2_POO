@@ -24,6 +24,17 @@ public class ListaLocacoes {
         return retorno;
     }
 
+    public void atualizaValorDasLocacoes(){
+        for(int i = 0; i<locacoes.size(); i++){
+            locacoes.get(i).calculaPeriodo();
+            locacoes.get(i).setValorLocacao();
+        }
+    }
+
+    public ArrayList<Locacao> getLocacoes(){
+        return locacoes;
+    }
+
     public boolean procuraLocacaoNessaData(String data){
         for(int i = 0; i<locacoes.size(); i++) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");

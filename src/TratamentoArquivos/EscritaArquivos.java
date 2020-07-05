@@ -124,19 +124,27 @@ public class EscritaArquivos {
         }
     }
 
-//    public void gravaRegistrosLocacoes(Locacao[] lista){
-//        Path path1 = Paths.get("locacoes.txt");
-//        try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
-//            for (Locacao loc : lista) {
-//                if(loc instanceof Locacao) writer.format("%s;%d;%f;%s;%s%n",auto.getPlaca(),auto.getAno(),auto.getValorDiaria(),auto.getModelo().getNome(),"T");
-//                //writer.format("%s",mar.getNome());
-//                if(loc instanceof Locacao) writer.format("%s;%d;%f;%s;%s%n",auto.getPlaca(),auto.getAno(),auto.getValorDiaria(),auto.getModelo().getNome(),"F");
-//            }
-//        }
-//        catch (IOException e) {
-//            System.err.format("Erro de E/S: %s%n", e);
-//        }
-//    }
+    public void gravaRegistrosLocacoes(Locacao[] lista){
+        Path path1 = Paths.get("locacoes.txt");
+        try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path1, Charset.defaultCharset()))) {
+            for (Locacao loc : lista) {
+                if(loc instanceof Locacao){
+                    if(loc.getCliente() instanceof PessoaFisica){
+                        loc.calculaPeriodo();
+                        writer.format("%s;%s;%s;%s;%f%n",loc.getAutomovel().getPlaca(),((PessoaFisica)loc.getCliente()).getCpf(),loc.getDataInicial(),loc.getDataFinal(),loc.getValorLocacao2());
+                    }
+                    if(loc.getCliente() instanceof PessoaJuridica){
+                        loc.calculaPeriodo();
+                        writer.format("%s;%s;%s;%s;%f%n",loc.getAutomovel().getPlaca(),((PessoaJuridica)loc.getCliente()).getCnpj(),loc.getDataInicial(),loc.getDataFinal(),loc.getValorLocacao2());
+                    }
+
+                }
+            }
+        }
+        catch (IOException e) {
+            System.err.format("Erro de E/S: %s%n", e);
+        }
+    }
 
 
 

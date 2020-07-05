@@ -36,6 +36,13 @@ public class Locacao {
         this.tipoCliente = tipoCliente;
     }
 
+    public String getDataInicial(){
+        return dataInicio;
+    }
+
+    public String getDataFinal(){
+        return dataFinal;
+    }
 
     public void setDates(){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -54,6 +61,17 @@ public class Locacao {
 
     public double getValorLocacao(){
         if(tipoCliente.equalsIgnoreCase("J")){
+            valor = (automovel.getModelo().getValorFixo()/1000) + ((automovel.getValorDiaria()*0.95) * periodo);
+            return valor;
+        }
+        else{
+            valor = (automovel.getModelo().getValorFixo()/1000) + (automovel.getValorDiaria() * periodo);
+            return valor;
+        }
+    }
+
+    public double getValorLocacao2(){
+        if(cliente instanceof PessoaJuridica){
             valor = (automovel.getModelo().getValorFixo()/1000) + ((automovel.getValorDiaria()*0.95) * periodo);
             return valor;
         }

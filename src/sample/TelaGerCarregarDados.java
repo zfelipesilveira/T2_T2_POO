@@ -36,7 +36,6 @@ public class TelaGerCarregarDados extends Application {
     private ListaClientes listaCli;
     private ListaMarcas listaMar;
     private ListaModelo listaMod;
-    private PilhaPedidos pilhaPed;
     private ListaLocacoes listaLoca;
     private PilhaPedidosLocacoes pilhaPedLoc;
 
@@ -61,29 +60,6 @@ public class TelaGerCarregarDados extends Application {
 
     }
 
-    public ListaAutomoveis getListaAuto() {
-        return listaAuto;
-    }
-
-    public ListaCategoria getListaCat() {
-        return listaCat;
-    }
-
-    public ListaModelo getListaModelo() {
-        return listaMod;
-    }
-
-    public ListaLocacoes getListaLoca() {
-        return listaLoca;
-    }
-
-    public ListaClientes getListaCli() {
-        return listaCli;
-    }
-
-    public PilhaPedidos getFilaPedidos() {
-        return pilhaPed;
-    }
 
     public ListaMarcas getListaMar() {
         return listaMar;

@@ -38,7 +38,6 @@ public class MenuGerente extends Application {
     private ListaMarcas listaMar;
     private ListaModelo listaMod;
     private ListaLocacoes listaLoc;
-    private PilhaPedidos pilhaPed;
     private PilhaPedidosLocacoes pilhaPedLoc;
 
 
