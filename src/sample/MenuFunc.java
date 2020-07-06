@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 public class MenuFunc extends Application {
 
+    // telas necessárias
     private Application raiz;
     private TelaFuncCadastraCliente telaFCC;
     private TelaFuncConsultaDisponibilidade telaFCD;
