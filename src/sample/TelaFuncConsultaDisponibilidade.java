@@ -131,11 +131,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
                 String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
                 listaDeAutomoveis.setText(str);
 
-//                listaAutoNaTela.setFill(Color.GRAY);
-//                String str = "Automóveis Disponíveis:" + "\n" + automoveisDisponiveis;
-//                actiontarget.setText(str);
-//
-//                System.out.println(listaCat.getTotal());
+
 
 
 
@@ -148,23 +144,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 
         });
 
-//        btnCadastrar.setOnAction(e -> {
-//            try {
-//                raiz.start(thestage);
-//            } catch (Exception ex) {
-//                ex.printStackTrace();
-//            }
-//        });
 
-//        btnCadCli.setOnAction(e -> {
-//            try {
-//
-//            }
-//        });
-
-//        btnFinal.setOnAction(e -> {
-//            thestage.close();
-//        });
         Scene scene4 = new Scene(painel4, 700, 600);
 
         primaryStage.setTitle("Verificar disponibilidade");
