@@ -1,4 +1,4 @@
-package Teste;
+package ClassesBasicas;
 
 public class MarcaAutomovel {
     private String nome;

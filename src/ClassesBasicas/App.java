@@ -1,4 +1,4 @@
-package Teste;
+package ClassesBasicas;
 
 import java.util.Scanner;
 

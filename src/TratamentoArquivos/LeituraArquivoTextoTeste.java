@@ -1,7 +1,7 @@
 package TratamentoArquivos;
 
 
-import Teste.*;
+import ClassesBasicas.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;

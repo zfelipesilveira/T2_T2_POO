@@ -1,6 +1,6 @@
 package TestesUnitarios;
 
-import Teste.MarcaAutomovel;
+import ClassesBasicas.MarcaAutomovel;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

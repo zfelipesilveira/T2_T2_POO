@@ -1,10 +1,5 @@
-package Teste;
+package ClassesBasicas;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
-import java.util.LinkedList;
-import java.util.List;
 import java.util.ArrayList;
 public class ListaCategoria {
     public ArrayList<CategoriaAutomovel> categorias;

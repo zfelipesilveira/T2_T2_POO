@@ -1,8 +1,5 @@
-package Teste;
+package ClassesBasicas;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Stack;
 
 public class PilhaPedidosLocacoes {

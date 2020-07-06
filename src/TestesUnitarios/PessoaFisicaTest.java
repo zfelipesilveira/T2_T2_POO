@@ -1,6 +1,6 @@
 package TestesUnitarios;
 
-import Teste.PessoaFisica;
+import ClassesBasicas.PessoaFisica;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

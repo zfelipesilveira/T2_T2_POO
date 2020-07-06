@@ -1,9 +1,9 @@
 package TestesUnitarios;
 
-import Teste.Automovel;
-import Teste.CategoriaAutomovel;
-import Teste.MarcaAutomovel;
-import Teste.ModeloNacional;
+import ClassesBasicas.Automovel;
+import ClassesBasicas.CategoriaAutomovel;
+import ClassesBasicas.MarcaAutomovel;
+import ClassesBasicas.ModeloNacional;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

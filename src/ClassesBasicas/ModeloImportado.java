@@ -1,4 +1,4 @@
-package Teste;
+package ClassesBasicas;
 
 public class ModeloImportado extends ModeloAutomovel {
     private double taxa;

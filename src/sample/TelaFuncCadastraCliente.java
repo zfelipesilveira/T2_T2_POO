@@ -1,10 +1,10 @@
 package sample;
 
 
-import Teste.Cliente;
-import Teste.ListaClientes;
-import Teste.PessoaFisica;
-import Teste.PessoaJuridica;
+import ClassesBasicas.Cliente;
+import ClassesBasicas.ListaClientes;
+import ClassesBasicas.PessoaFisica;
+import ClassesBasicas.PessoaJuridica;
 import TratamentoArquivos.EscritaArquivos;
 import javafx.application.Application;
 import javafx.geometry.Insets;

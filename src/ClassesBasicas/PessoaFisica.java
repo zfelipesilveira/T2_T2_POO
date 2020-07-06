@@ -1,4 +1,4 @@
-package Teste;
+package ClassesBasicas;
 
 public class PessoaFisica extends Cliente {
     private String cpf = "";

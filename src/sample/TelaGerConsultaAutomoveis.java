@@ -1,9 +1,7 @@
 package sample;
 
-import Teste.*;
-import TratamentoArquivos.LeituraArquivoTextoTeste;
+import ClassesBasicas.*;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

@@ -1,4 +1,4 @@
-package Teste;
+package ClassesBasicas;
 
 public class PessoaJuridica extends Cliente {
     private String cnpj = "";

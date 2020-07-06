@@ -1,4 +1,4 @@
-package Teste;
+package ClassesBasicas;
 
 public abstract class ModeloAutomovel {
     public String nome;

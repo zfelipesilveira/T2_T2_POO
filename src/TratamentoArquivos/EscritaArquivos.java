@@ -1,6 +1,6 @@
 package TratamentoArquivos;
 
-import Teste.*;
+import ClassesBasicas.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;

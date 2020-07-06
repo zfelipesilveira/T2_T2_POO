@@ -1,6 +1,6 @@
 package sample;
 
-import Teste.*;
+import ClassesBasicas.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

@@ -1,6 +1,6 @@
 package TestesUnitarios;
 
-import Teste.*;
+import ClassesBasicas.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

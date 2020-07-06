@@ -1,6 +1,6 @@
 package TestesUnitarios;
 
-import Teste.PessoaJuridica;
+import ClassesBasicas.PessoaJuridica;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

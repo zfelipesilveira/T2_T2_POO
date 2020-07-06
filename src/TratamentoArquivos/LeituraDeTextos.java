@@ -1,6 +1,6 @@
 package TratamentoArquivos;
 
-import Teste.*;
+import ClassesBasicas.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,13 +13,28 @@ import java.util.Scanner;
 public class LeituraDeTextos {
 
     public void leRegistrosTextoClientes(ListaClientes lcli) {
-        Path path = Paths.get("teste2.txt");
+        Path path = Paths.get("clientes.txt");
         try (BufferedReader br = Files.newBufferedReader(path, Charset.defaultCharset())) {
-            String linha = null;
+            String linha;
             while ((linha = br.readLine()) != null) {
                 // separador: ;
                 Scanner sc = new Scanner(linha).useDelimiter(";");
-                System.out.println(sc.next()+"; "+sc.next()+"; "+ sc.next());
+                String cpfcnpj = sc.next();
+                String nome = sc.next();
+                String telefone = sc.next();
+                String tipoCliente = sc.next();
+
+                if(tipoCliente.equalsIgnoreCase("J"))
+                {
+                    Cliente pj = new PessoaJuridica(nome,telefone,cpfcnpj);
+                    lcli.insere(pj);
+                }
+                if(tipoCliente.equalsIgnoreCase("F"))
+                {
+                    Cliente pf = new PessoaFisica(nome,telefone,cpfcnpj);
+                    lcli.insere(pf);
+                }
+                //System.out.println(sc.next()+"; "+sc.next()+"; "+ sc.next()+"; "+ sc.next());
             }
         }
         catch (IOException e) {
