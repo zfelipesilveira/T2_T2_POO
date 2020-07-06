@@ -32,7 +32,7 @@ public class TelaFuncConsultaValorLocacao extends Application {
     private ListaAutomoveis listaAuto;
     private ToggleGroup rbFisicaJuridica;
     private RadioButton rbFisica, rbJuridica;
-    private ComboBox cbCategorias;
+    private ComboBox<String> cbCategorias;
 
 
 
@@ -83,7 +83,7 @@ public class TelaFuncConsultaValorLocacao extends Application {
 
         Label selecionaCategoria = new Label("Seleciona a categoria");
         painel4.add(selecionaCategoria, 1, 1);
-        cbCategorias = new ComboBox(FXCollections.observableArrayList(listaNomeCategorias));
+        cbCategorias = new ComboBox<String>(FXCollections.observableArrayList(listaNomeCategorias));
 
         Label digitaPlaca = new Label("Digite a placa");
         painel4.add(digitaPlaca,0,3);

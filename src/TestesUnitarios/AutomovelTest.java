@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AutomovelTest {
-
     @Test
     public void testCreate(){
         CategoriaAutomovel c1 = new CategoriaAutomovel("suv");

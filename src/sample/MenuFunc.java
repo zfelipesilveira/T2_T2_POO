@@ -25,7 +25,7 @@ public class MenuFunc extends Application {
     private TelaFuncConsultaValorLocacao telaFCVL;
     private TelaFuncRealizaLocacao telaFRL;
     private TelaFuncFinalizaLocacao telaFFL;
-    private ComboBox cbCategorias;
+    private ComboBox<String> cbCategorias;
 
     //coleções necessárias
     private ListaAutomoveis listaAuto;

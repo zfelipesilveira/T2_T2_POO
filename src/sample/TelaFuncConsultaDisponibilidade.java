@@ -32,7 +32,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
     private ListaAutomoveis listaAuto;
     private ToggleGroup rbFisicaJuridica;
     private RadioButton rbFisica, rbJuridica;
-    private ComboBox cbCategorias;
+    private ComboBox<String> cbCategorias;
 
 
 
@@ -79,7 +79,7 @@ public class TelaFuncConsultaDisponibilidade extends Application {
 
         Label selecionaCategoria = new Label("Selecione a categoria");
         painel4.add(selecionaCategoria, 1, 1);
-        cbCategorias = new ComboBox(FXCollections.observableArrayList(listaNomeCategorias));
+        cbCategorias = new ComboBox<String>(FXCollections.observableArrayList(listaNomeCategorias));
 
 //        Cliente[] listaSalvar = new Cliente[100];
 //        listaSalvar = listaCli.getClientes().toArray(listaSalvar);

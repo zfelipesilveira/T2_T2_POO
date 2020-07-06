@@ -217,7 +217,7 @@ public class TelaGerCadastraModelo extends Application {
                 System.out.println(listaSalvar);
                 escritaArquivos.gravaRegistrosModelos(listaSalvar);
                 actiontarget.setFill(Color.GREEN);
-                actiontarget.setText("Categorias salvas em txt");
+                actiontarget.setText("Modelos salvos em txt");
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
